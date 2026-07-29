@@ -1,0 +1,6 @@
+node_modules/
+icon_cache/
+__pycache__/
+slide-*.jpg
+package.json
+package-lock.json
