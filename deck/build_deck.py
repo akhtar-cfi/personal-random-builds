@@ -27,17 +27,27 @@ BAND_X = Inches(9.73)
 rect(s, BAND_X, 0, SLIDE_W-BAND_X, SLIDE_H, BRAND)
 sparkle(s, Inches(12.30), Inches(0.42), Inches(0.52), WHITE)
 sparkle(s, Inches(12.02), Inches(0.86), Inches(0.30), WHITE)
-tags = [("I", "THE SHIFT"), ("II", "THE INSTITUTION"), ("III", "THE PROOF"), ("IV", "THE PEOPLE")]
-ty = Inches(2.2)
+tags = [("I", "THE PROBLEM"), ("II", "WHO WE ARE"), ("III", "WHAT WE DO"), ("IV", "OUR PEOPLE")]
+ty = Inches(1.7)
 for rn, tag in tags:
-    text(s, BAND_X+Inches(0.5), ty, Inches(0.55), Inches(0.35), rn, font=HEAD, size=13, bold=True, color=LAV)
-    text(s, BAND_X+Inches(1.15), ty+Inches(0.02), Inches(2.3), Inches(0.35), tag, font=HEAD, size=10.5,
-         bold=True, color=WHITE, tracking=2.0)
-    if tag != "THE PEOPLE":
-        hline(s, BAND_X+Inches(0.5), ty+Inches(0.62), Inches(2.6), color=LAV_DK, wt=0.75)
-    ty += Inches(0.92)
-text(s, BAND_X+Inches(0.5), Inches(6.55), Inches(2.9), Inches(0.6),
-     "Zero road fatalities\nby 2040.", font=HEAD, size=11.5, bold=True, color=LAV, ls=1.25)
+    text(s, BAND_X+Inches(0.5), ty, Inches(0.55), Inches(0.35), rn, font=HEAD, size=12, bold=True, color=LAV)
+    text(s, BAND_X+Inches(1.1), ty+Inches(0.02), Inches(2.3), Inches(0.35), tag, font=HEAD, size=10,
+         bold=True, color=WHITE, tracking=1.8)
+    if tag != "OUR PEOPLE":
+        hline(s, BAND_X+Inches(0.5), ty+Inches(0.5), Inches(2.55), color=LAV_DK, wt=0.75)
+    ty += Inches(0.72)
+# Dhoni cutout, subtle, anchored to band bottom (photo: CFI shoot, June 2026)
+try:
+    from PIL import Image as _Img
+    _d = _Img.open(os.path.join(BUILD_DIR, "dhoni_cutout_helmet.png"))
+    _ar = _d.width/_d.height
+    DH = Inches(2.8); DW = Inches(2.8*_ar)
+    s.shapes.add_picture(os.path.join(BUILD_DIR, "dhoni_cutout_helmet.png"),
+                         SLIDE_W-DW-Inches(0.62), SLIDE_H-DH, width=DW, height=DH)
+    text(s, BAND_X+Inches(0.5), Inches(4.42), Inches(2.7), Inches(0.3),
+         "MS DHONI · GOODWILL AMBASSADOR", font=HEAD, size=7.5, bold=True, color=LAV, tracking=1.4)
+except Exception as e:
+    print("cover dhoni missing", e)
 # left title block
 eyebrow(s, M_L, Inches(2.85), "CRASHFREE INDIA  ·  A CARS24 COMMITMENT")
 text(s, M_L, Inches(3.22), Inches(8.7), Inches(1.9),
@@ -45,7 +55,7 @@ text(s, M_L, Inches(3.22), Inches(8.7), Inches(1.9),
 text(s, M_L, Inches(3.94), Inches(8.7), Inches(0.9),
      "we hold them accountable.", font=HEAD, size=40, bold=True, color=BRAND, ls=1.04)
 text(s, M_L, Inches(4.95), Inches(8.4), Inches(0.6),
-     "An overview of the audit-and-accountability institution for India's roads.",
+     "Who we are, what we do, and what we have built — a nonprofit working for zero road deaths in India by 2040.",
      font=BODY, size=14, color=MUTED, ls=1.4)
 hline(s, M_L, Inches(6.55), Inches(8.3), color=BORDER, wt=1.0)
 text(s, M_L, Inches(6.75), Inches(8.4), Inches(0.35),
@@ -54,9 +64,9 @@ text(s, M_L, Inches(6.75), Inches(8.4), Inches(0.35),
 
 # ============================================================ S2 THE SHIFT
 s = new_slide(WHITE)
-ny = std_header(s, "THE SHIFT",
-                "For seventy years, ‘driver error’ closed the file.",
-                "The data just reopened it.")
+ny = std_header(s, "THE PROBLEM · WHY ROAD DEATHS PERSIST",
+                "Most road deaths in India are failures of",
+                "roads and systems — not just of drivers.")
 # left giant stat
 text(s, M_L, Inches(2.55), Inches(5.2), Inches(2.0), "59%", font=HEAD, size=120, bold=True, color=BRAND, ls=0.95)
 text(s, M_L, Inches(4.55), Inches(5.0), Inches(0.9),
@@ -81,13 +91,13 @@ for icn, t1, t2 in rows:
 # bottom strip
 rect(s, M_L, Inches(6.05), CONTENT_W, Inches(0.55), BRAND_LITE, rounded=True)
 text(s, M_L+Inches(0.3), Inches(6.05), CONTENT_W-Inches(0.6), Inches(0.55),
-     "Once failure is attributable, it becomes fixable — and someone can be held to fixing it.",
+     "India has strong road-safety laws. What has been missing is an institution that makes them work on the ground.",
      font=HEAD, size=12, bold=True, color=BRAND, anchor=MSO_ANCHOR.MIDDLE)
-footer(s, 2, TOTAL, "THE SHIFT")
+footer(s, 2, TOTAL, "THE PROBLEM")
 
 # ============================================================ S3 THE STAKES (held breath, red #1)
 s = new_slide(WHITE)
-eyebrow(s, M_L, Inches(0.55), "THE STAKES")
+eyebrow(s, M_L, Inches(0.55), "THE PROBLEM · THE SCALE")
 text(s, Inches(0.7), Inches(1.15), Inches(11.9), Inches(2.6), "485",
      font=HEAD, size=210, bold=True, color=DANGER, align=PP_ALIGN.CENTER, ls=0.9)
 text(s, Inches(0.7), Inches(4.05), Inches(11.9), Inches(0.5),
@@ -105,25 +115,25 @@ for i,(num,lab) in enumerate(stats):
 text(s, Inches(0.7), Inches(6.55), Inches(11.9), Inches(0.3),
      "Source: MoRTH, Road Accidents in India 2024 · Crashfree India Crash Data Dashboard",
      font=BODY, size=9, color=MUTED, italic=True, align=PP_ALIGN.CENTER)
-footer(s, 3, TOTAL, "THE STAKES")
+footer(s, 3, TOTAL, "THE PROBLEM · THE SCALE")
 
 # ============================================================ S4 THE FINDING (brand)
 s = new_slide(BRAND)
 logo(s, M_L, Inches(0.5), Inches(2.1), dark=True)
 sparkles_tr(s, LAV_DK)
-text(s, M_L, Inches(1.35), Inches(11.9), Inches(0.4), "THE FINDING", font=HEAD, size=10, bold=True,
+text(s, M_L, Inches(1.35), Inches(11.9), Inches(0.4), "THE PROBLEM · THREE GAPS", font=HEAD, size=10, bold=True,
      color=LAV, tracking=2.4)
-text(s, M_L, Inches(1.75), Inches(11.9), Inches(0.65), "System failure, unowned.",
+text(s, M_L, Inches(1.75), Inches(11.9), Inches(0.65), "Where the system fails today.",
      font=HEAD, size=30, bold=True, color=WHITE)
 text(s, M_L, Inches(2.42), Inches(11.5), Inches(0.4),
-     "Three audits of how India responds to a road death. The same defect each time: nobody owns the follow-through.",
+     "We studied how India responds to a road death. Three gaps repeat everywhere — and no institution owns the follow-through.",
      font=BODY, size=12, color=LAV, ls=1.35)
 cards = [
-    ("traffic-cone", "EXHIBIT A · ROADS", "Audits die at submission.",
-     "Hazards get reported, studies get filed — and no institution tracks whether a single fix is ever built."),
-    ("scale", "EXHIBIT B · JUSTICE", "₹80,000 Cr sits undelivered.",
-     "10.46 lakh compensation cases pending. In one Gurugram audit: 102 hit-and-run files since 2022 — 2 settled."),
-    ("siren", "EXHIBIT C · ENFORCEMENT", "Repeat offenders stay invisible.",
+    ("traffic-cone", "GAP 1 · DANGEROUS ROADS", "Audits stop at the report.",
+     "Hazards get reported and studies get filed — but no institution tracks whether a single fix is ever built."),
+    ("scale", "GAP 2 · COMPENSATION", "₹80,000 Cr sits undelivered.",
+     "10.46 lakh compensation cases pending. In one Gurugram audit: 102 hit-and-run files since 2022 — only 2 settled."),
+    ("siren", "GAP 3 · ENFORCEMENT", "Repeat offenders go unchecked.",
      "46 crore e-challans issued, ~75% unpaid — while roadside enforcement still stops vehicles at random."),
 ]
 cw = Inches(3.85); gap = Inches(0.19); cx = M_L; cy = Inches(3.1); ch = Inches(2.85)
@@ -139,16 +149,16 @@ for icn, kick, t1, t2 in cards:
          color=LAV, ls=1.3)
     cx += cw + gap
 text(s, M_L, Inches(6.28), Inches(11.9), Inches(0.4),
-     "That gap — between what is known and what gets done — is the institutional white space Crashfree India was built to fill.",
+     "The distance between what is known and what gets done is the gap Crashfree India was created to close.",
      font=HEAD, size=12.5, bold=True, color=WHITE, ls=1.3)
-footer_dark(s, 4, "THE FINDING")
+footer_dark(s, 4, "THE PROBLEM · THREE GAPS")
 
 # ============================================================ S5 THE INSTITUTION
 s = new_slide(WHITE)
-ny = std_header(s, "PART II · THE INSTITUTION",
-                "Not a charity.",
-                "The institution India's roads never had.",
-                "Crashfree India is the audit-and-accountability layer for road safety — launched June 2025 as a Cars24 commitment, operated by Vision Zero Trust, New Delhi.")
+ny = std_header(s, "WHO WE ARE · ABOUT CRASHFREE INDIA",
+                "A nonprofit institution working towards",
+                "zero road deaths in India by 2040.",
+                "Launched in June 2025 and funded by Cars24, we identify road-safety failures, get fixes approved by government, and track every fix to completion.")
 tiles = [
     ("calendar", "Founded June 2025", "Launched by Cars24 with the Indian Road Safety Campaign; roots in a decade of IRSC campus audit work."),
     ("indian-rupee", "$3M over 3 years", "Cars24's committed institutional funding — programme-first: 71% of FY26-27 budget goes to programmes."),
@@ -169,9 +179,9 @@ footer(s, 5, TOTAL, "ABOUT CRASHFREE INDIA")
 
 # ============================================================ S6 OPERATING MODEL
 s = new_slide(BRAND_LITE)
-ny = std_header(s, "HOW WE WORK",
-                "We don't run campaigns.",
-                "We make the system move.")
+ny = std_header(s, "WHO WE ARE · OUR APPROACH",
+                "How we work: audit, advocate, and",
+                "follow through until the fix is built.")
 # left: loop blocks
 steps = [
     ("search-check", "AUDIT", "Find", "Field evidence to IRC / MoRTH standards — blackspots, claim files, enforcement gaps."),
@@ -192,9 +202,9 @@ for i,(icn, t1, t15, t2) in enumerate(steps):
 # right: refusals block
 RX = Inches(9.35); RW = Inches(3.28)
 rect(s, RX, Inches(2.55), RW, Inches(3.3), BRAND, rounded=True)
-text(s, RX+Inches(0.3), Inches(2.82), RW-Inches(0.6), Inches(0.3), "WHAT WE REFUSE TO BE",
+text(s, RX+Inches(0.3), Inches(2.82), RW-Inches(0.6), Inches(0.3), "WHAT WE DELIBERATELY AVOID",
      font=HEAD, size=9.5, bold=True, color=LAV, tracking=1.8)
-refusals = ["An awareness machine", "An activity factory", "A government substitute", "A paper think tank"]
+refusals = ["Awareness-only campaigns", "Event counts as impact", "Replacing government's role", "Reports without follow-up"]
 ry = Inches(3.25)
 for rtxt in refusals:
     circle(s, RX+Inches(0.3), ry+Inches(0.02), Inches(0.26), RGBColor(0x5A,0x46,0xFF))
@@ -211,38 +221,39 @@ footer(s, 6, TOTAL, "OPERATING MODEL")
 
 # ============================================================ S7 RAKSHAK
 s = new_slide(WHITE)
-ny = std_header(s, "THE PROOF · 01 INFRASTRUCTURE — PROJECT RAKSHAK",
-                "Students audit.",
-                "Governments rebuild.")
+ny = std_header(s, "WHAT WE DO · 01 ROAD INFRASTRUCTURE",
+                "Project Rakshak — engineering students",
+                "audit dangerous roads; governments fix them.",
+                "A national programme that mobilises trained student teams to audit high-risk locations to official standards and hand authorities ready-to-build fixes.")
 # funnel
 funnel = [("120+", "high-risk locations\nscreened nationwide"),
           ("31", "sites fully audited,\nincl. 11 official blackspots"),
           ("25+", "written government\napprovals secured"),
           ("15", "implementations\nbegun on the ground")]
-fx = M_L; fy = Inches(2.65); fw = Inches(1.92); fh = Inches(1.7)
+fx = M_L; fy = Inches(2.95); fw = Inches(1.92); fh = Inches(1.6)
 for i,(num,lab) in enumerate(funnel):
     fill = BRAND if i==3 else BRAND_LITE
     tcol = WHITE if i==3 else BRAND
     lcol = LAV if i==3 else MUTED
     rect(s, fx, fy, fw, fh, fill, rounded=True)
-    text(s, fx, fy+Inches(0.18), fw, Inches(0.65), num, font=HEAD, size=30, bold=True, color=tcol, align=PP_ALIGN.CENTER)
-    text(s, fx, fy+Inches(0.88), fw, Inches(0.7), lab, font=BODY, size=8.8, color=lcol, align=PP_ALIGN.CENTER, ls=1.2)
+    text(s, fx, fy+Inches(0.14), fw, Inches(0.65), num, font=HEAD, size=28, bold=True, color=tcol, align=PP_ALIGN.CENTER)
+    text(s, fx, fy+Inches(0.8), fw, Inches(0.7), lab, font=BODY, size=8.8, color=lcol, align=PP_ALIGN.CENTER, ls=1.2)
     if i < 3:
         icon(s, "chevron-right", fx+fw+Inches(0.015), fy+fh/2-Inches(0.12), Inches(0.24), LAVDK_HEX)
     fx += fw + Inches(0.27)
 # chips under funnel
 chips_row = ["18 cities", "20 institutions · 9 IITs", "900+ stakeholder surveys"]
-cxx = M_L; cyy = Inches(4.62)
+cxx = M_L; cyy = Inches(4.75)
 widths = [Inches(1.5), Inches(2.6), Inches(2.5)]
 for wd, ct in zip(widths, chips_row):
     chip(s, cxx, cyy, wd, Inches(0.42), ct, fill=WHITE, tcolor=DARK, size=9.5, line=BORDER)
     cxx += wd + Inches(0.18)
 # case card
-rect(s, M_L, Inches(5.3), Inches(8.5), Inches(1.35), BRAND_LITE, rounded=True)
-icon(s, "hard-hat", M_L+Inches(0.3), Inches(5.55), Inches(0.34), BLUE_HEX)
-text(s, M_L+Inches(0.82), Inches(5.48), Inches(7.4), Inches(0.3), "Case: Tejaji Nagar Junction, Indore",
+rect(s, M_L, Inches(5.4), Inches(8.5), Inches(1.3), BRAND_LITE, rounded=True)
+icon(s, "hard-hat", M_L+Inches(0.3), Inches(5.62), Inches(0.34), BLUE_HEX)
+text(s, M_L+Inches(0.82), Inches(5.56), Inches(7.4), Inches(0.3), "Example: Tejaji Nagar Junction, Indore",
      font=HEAD, size=12, bold=True, color=DARK)
-text(s, M_L+Inches(0.82), Inches(5.82), Inches(7.5), Inches(0.75),
+text(s, M_L+Inches(0.82), Inches(5.9), Inches(7.5), Inches(0.75),
      "Student-audited redesign to IRC / MoRTH standards — signals, lighting, footpaths, speed management — approved by CPWD and the Additional Collector's office. Guided by Prof. Geetam Tiwari (TRIPC, IIT Delhi).",
      font=BODY, size=10, color=MUTED, ls=1.3)
 # right map
@@ -252,14 +263,14 @@ except Exception as e:
     print("map missing", e)
 text(s, Inches(9.35), Inches(6.4), Inches(3.5), Inches(0.25), "Every audit public: crashfreeindia.org/rakshak/dashboard",
      font=BODY, size=8.5, color=MUTED, italic=True, align=PP_ALIGN.CENTER)
-footer(s, 7, TOTAL, "PROOF · PROJECT RAKSHAK")
+footer(s, 7, TOTAL, "WHAT WE DO · PROJECT RAKSHAK")
 
 # ============================================================ S8 SATARK
 s = new_slide(WHITE)
-ny = std_header(s, "THE PROOF · 02 ENFORCEMENT — SATARK",
-                "Enforcement that knows",
-                "which vehicle to stop.",
-                "An AI co-pilot for traffic police: every passing plate checked against live national records, so officers intercept the riskiest vehicles — not random ones.")
+ny = std_header(s, "WHAT WE DO · 02 ENFORCEMENT TECHNOLOGY",
+                "SATARK — an AI platform that helps traffic",
+                "police identify and stop high-risk vehicles.",
+                "Cameras read every passing number plate and check it against live national records, so officers act on evidence instead of stopping vehicles at random.")
 # pipeline
 pipe = [("camera", "ANPR camera\nreads every plate"),
         ("database", "Live vehicle record\nvia national APIs"),
@@ -287,13 +298,13 @@ rect(s, M_L, Inches(6.0), CONTENT_W, Inches(0.6), BRAND_LITE, rounded=True)
 text(s, M_L+Inches(0.3), Inches(6.0), CONTENT_W-Inches(0.6), Inches(0.6),
      "First 72 hours in Jaipur: 1,240 vehicles flagged, 58 intercepted.  ·  100 AI challan billboards already live in Gurugram; 12+ cities in discussion.",
      font=HEAD, size=11.5, bold=True, color=BRAND, anchor=MSO_ANCHOR.MIDDLE, ls=1.25)
-footer(s, 8, TOTAL, "PROOF · SATARK")
+footer(s, 8, TOTAL, "WHAT WE DO · SATARK")
 
 # ============================================================ S9 JUSTICE / AASHA
 s = new_slide(BRAND_LITE)
-ny = std_header(s, "THE PROOF · 03 JUSTICE — AASHA & COMPENSATION",
-                "The law promises ₹80,000 crore.",
-                "We make it reach families.")
+ny = std_header(s, "WHAT WE DO · 03 VICTIM SUPPORT & COMPENSATION",
+                "Helping crash victims and families claim",
+                "the compensation the law promises them.")
 # left: the gap (white card)
 LX = M_L; LW = Inches(5.7); LY = Inches(2.6); LH = Inches(3.55)
 rect(s, LX, LY, LW, LH, WHITE, line=BORDER, rounded=True)
@@ -316,11 +327,11 @@ rect(s, RX, LY, RW, LH, BRAND, rounded=True)
 text(s, RX+Inches(0.3), LY+Inches(0.22), RW-Inches(0.6), Inches(0.3), "THE MACHINERY WE BUILT",
      font=HEAD, size=9.5, bold=True, color=LAV, tracking=1.8)
 fix_rows = [
-    ("bot", "Aasha — India's first 24/7 multilingual AI compensation chatbot, on WhatsApp and voice"),
-    ("calculator", "Compensation Calculator on Supreme Court principles (Sarla Verma, Pranay Sethi)"),
-    ("hand-helping", "Hospital legal helpdesks — 100+ victims supported in the first 4 days"),
-    ("landmark", "Embedded in 4 district committees; ‘Justice Unserved’ findings presented to MoRTH"),
-    ("route", "Hit-and-run claim pipeline being rebuilt with Rajasthan Transport Department"),
+    ("bot", "Aasha — India's first 24/7 multilingual AI chatbot guiding victims step-by-step, on WhatsApp and voice"),
+    ("calculator", "Free Compensation Calculator based on Supreme Court principles (Sarla Verma, Pranay Sethi)"),
+    ("hand-helping", "Legal helpdesks inside hospital trauma wards — 100+ victims supported in the first 4 days"),
+    ("book-open", "Plain-language comic books and Hindi guides explaining rights, schemes and the claim process"),
+    ("landmark", "‘Justice Unserved’ research presented to MoRTH; claim pipeline being rebuilt with Rajasthan Transport Dept."),
 ]
 fy2 = LY + Inches(0.62)
 for icn, lab in fix_rows:
@@ -331,22 +342,23 @@ for icn, lab in fix_rows:
 text(s, M_L, Inches(6.35), Inches(11.9), Inches(0.35),
      "‘Justice Unserved’ (launched at IIT Delhi, 2026) is now the reference dataset on why crash compensation fails in India.",
      font=BODY, size=10.5, color=MUTED, italic=True)
-footer(s, 9, TOTAL, "PROOF · JUSTICE & AASHA")
+footer(s, 9, TOTAL, "WHAT WE DO · VICTIM SUPPORT")
 
 # ============================================================ S10 DATA COMMONS
 s = new_slide(WHITE)
-ny = std_header(s, "THE PROOF · 04 PUBLIC DATA",
-                "We publish what the system",
-                "would rather not know.")
+ny = std_header(s, "WHAT WE DO · 04 OPEN DATA PLATFORMS",
+                "Public data tools we built so that",
+                "road-safety problems cannot be ignored.",
+                "Four self-updating platforms — free for government, researchers, journalists and citizens.")
 prods = [
-    ("map-pinned", "Road Defect Repository", "AI reads local-language news in 13 languages across 146 districts — potholes, missing signage, unlit stretches — geocoded into public hotspot maps."),
-    ("landmark", "Road Safety in Parliament", "Every road-safety question since 2014 — 1,423 of them. And a finding: 282 sitting Lok Sabha MPs have never asked one."),
-    ("scale", "SC Litigation Tracker", "18 live Supreme Court cases, 190+ orders, with an accountability ledger of deadlines — 11 already overdue at launch."),
-    ("bar-chart-3", "Crash Data Dashboard", "MoRTH's 266-page annual PDFs productised: report cards for 36 states and 50 cities, open CC-BY — the canonical source for our own claims."),
+    ("map-pinned", "National Road Defect Repository", "AI reads local news in 13 languages across 146 districts — potholes, missing signage, unlit stretches — mapped publicly so authorities can act."),
+    ("landmark", "Road Safety in Parliament", "Every parliamentary road-safety question since 2014 — 1,423 of them — searchable by MP and state. 282 sitting Lok Sabha MPs have never asked one."),
+    ("scale", "Supreme Court Litigation Tracker", "18 live road-safety cases and 190+ orders, with each government deadline tracked — 11 were already overdue at launch."),
+    ("bar-chart-3", "National Crash Data Dashboard", "Government crash statistics (2019–2024) turned into report cards for 36 states and 50 cities — free and openly licensed."),
 ]
 cw = Inches(5.85); ch = Inches(1.55); gap = Inches(0.22)
 for i,(icn,t1,t2) in enumerate(prods):
-    x = M_L + (i%2)*(cw+gap); y = Inches(2.6) + (i//2)*(ch+Inches(0.2))
+    x = M_L + (i%2)*(cw+gap); y = Inches(2.95) + (i//2)*(ch+Inches(0.2))
     rect(s, x, y, cw, ch, WHITE, line=BORDER, rounded=True)
     circle(s, x+Inches(0.22), y+Inches(0.22), Inches(0.46), BRAND_LITE)
     icon(s, icn, x+Inches(0.315), y+Inches(0.315), Inches(0.27), BLUE_HEX)
@@ -360,13 +372,13 @@ for o in outlets:
     wd = Inches(0.24 + 0.093*len(o))
     chip(s, ox, Inches(6.3), wd, Inches(0.38), o, fill=BRAND_LITE, tcolor=BRAND, size=8.8)
     ox += wd + Inches(0.14)
-footer(s, 10, TOTAL, "PROOF · PUBLIC DATA")
+footer(s, 10, TOTAL, "WHAT WE DO · OPEN DATA")
 
 # ============================================================ S11 SCOREBOARD
 s = new_slide(BRAND_LITE)
-ny = std_header(s, "IMPACT · YEAR ONE",
-                "Twelve months in,",
-                "the system is answering.")
+ny = std_header(s, "IMPACT · OUR FIRST YEAR",
+                "Year one: measurable results",
+                "across 18 Indian cities.")
 tiles = [("1M+", "citizens reached"), ("18", "cities active"), ("25+", "govt approvals won"),
          ("15", "implementations begun"), ("4", "district committees joined"), ("2", "cities enforcing with SATARK"),
          ("150+", "members & interns"), ("50+", "experts engaged"), ("10+", "national media features")]
@@ -395,45 +407,50 @@ for d, ev in tl:
 text(s, M_L, Inches(6.3), Inches(8.2), Inches(0.35),
      "Every figure above is from our public dashboard and quarterly updates — audited numbers, not estimates.",
      font=BODY, size=10, color=MUTED, italic=True)
-footer(s, 11, TOTAL, "IMPACT · YEAR ONE")
+footer(s, 11, TOTAL, "IMPACT · OUR FIRST YEAR")
 
 # ============================================================ S12 DHONI (peak)
 s = new_slide(BRAND)
 logo(s, M_L, Inches(0.5), Inches(2.1), dark=True)
 sparkles_tr(s, LAV_DK)
-text(s, M_L, Inches(1.5), Inches(6.4), Inches(0.35), "GOODWILL AMBASSADOR", font=HEAD, size=10,
+text(s, M_L, Inches(1.5), Inches(6.4), Inches(0.35), "OUR AMBASSADOR", font=HEAD, size=10,
      bold=True, color=LAV, tracking=2.4)
-text(s, M_L, Inches(1.92), Inches(6.6), Inches(0.7), "A new captain", font=HEAD, size=34, bold=True, color=WHITE)
-text(s, M_L, Inches(2.55), Inches(6.6), Inches(0.7), "for road safety.", font=HEAD, size=34, bold=True, color=LAV)
-text(s, M_L, Inches(3.45), Inches(6.2), Inches(1.0),
-     "MS Dhoni joined Crashfree India in April 2026, unveiled at our national forum at IIT Delhi — lending the country's most trusted voice to a systems problem.",
+text(s, M_L, Inches(1.92), Inches(6.6), Inches(0.7), "MS Dhoni is Crashfree India's", font=HEAD, size=27, bold=True, color=WHITE)
+text(s, M_L, Inches(2.45), Inches(6.6), Inches(0.7), "Goodwill Ambassador.", font=HEAD, size=27, bold=True, color=LAV)
+text(s, M_L, Inches(3.25), Inches(6.1), Inches(1.0),
+     "One of India's most trusted public figures joined us in April 2026, unveiled at our national forum at IIT Delhi. His role — lending his voice where it moves people to act:",
      font=BODY, size=12, color=WHITE, ls=1.4)
-roles = ["Voice of ‘Be a Rakshak’ — recruiting India's students into road audits",
-         "Champion for safe school zones",
-         "Amplifier for compensation rights & Aasha"]
-ry = Inches(4.5)
+roles = ["Inviting India's students to join Project Rakshak road audits",
+         "Championing safer school zones",
+         "Spreading awareness of victims' compensation rights and Aasha"]
+ry = Inches(4.35)
 for rl in roles:
     icon(s, "check", M_L+Inches(0.02), ry+Inches(0.03), Inches(0.2), "#C8C0FF")
     text(s, M_L+Inches(0.35), ry, Inches(5.9), Inches(0.3), rl, font=BODY, size=10.5, color=LAV, ls=1.2)
     ry += Inches(0.42)
-text(s, M_L, Inches(6.0), Inches(6.2), Inches(0.5),
+text(s, M_L, Inches(5.95), Inches(6.2), Inches(0.5),
      "“Because every ride deserves to end safely.”", font=HEAD, size=13, bold=True, color=WHITE, italic=True)
-text(s, M_L, Inches(6.5), Inches(6.2), Inches(0.3),
-     "Coverage: Business Standard · The Tribune · The Wire", font=BODY, size=9.5, color=LAV)
-# right: creative
+text(s, M_L, Inches(6.45), Inches(6.2), Inches(0.3),
+     "Announcement covered by Business Standard · The Tribune · The Wire", font=BODY, size=9.5, color=LAV)
+# right: real shoot photo (helmet) + announcement creative
 try:
-    pic = s.shapes.add_picture(os.path.join(A, "DHONI_CFI_-_1200X630.png"), Inches(7.35), Inches(2.05), width=Inches(5.3))
-    text(s, Inches(7.35), Inches(4.95), Inches(5.3), Inches(0.25), "Announcement creative · April 2026",
+    from PIL import Image as _Img2
+    _h = _Img2.open(os.path.join(BUILD_DIR, "dhoni_cutout_white.png"))
+    _har = _h.width/_h.height
+    HH = Inches(5.1); HW = Inches(5.1*_har)
+    s.shapes.add_picture(os.path.join(BUILD_DIR, "dhoni_cutout_white.png"),
+                         Inches(12.63)-HW, Inches(1.35), width=HW, height=HH)
+    text(s, Inches(8.9), Inches(6.5), Inches(3.9), Inches(0.25), "CFI shoot · June 2026",
          font=BODY, size=8.5, color=LAV, italic=True, align=PP_ALIGN.CENTER)
 except Exception as e:
     print("dhoni image missing", e)
-footer_dark(s, 12, "GOODWILL AMBASSADOR")
+footer_dark(s, 12, "OUR AMBASSADOR")
 
 # ============================================================ S13 GOVERNANCE
 s = new_slide(WHITE)
-ny = std_header(s, "PART IV · THE PEOPLE — BOARD OF ADVISORS",
-                "The people who audit",
-                "the auditors.")
+ny = std_header(s, "OUR PEOPLE · BOARD OF ADVISORS",
+                "Guided by two of India's foremost",
+                "road-safety experts.")
 boa = [
     ("Piyush Tewari", "Founder & CEO, SaveLIFE Foundation",
      ["Architect of India's Good Samaritan Law (Supreme Court, 2016)",
@@ -480,9 +497,9 @@ footer(s, 13, TOTAL, "BOARD OF ADVISORS & EXPERTS")
 
 # ============================================================ S14 TEAM
 s = new_slide(WHITE)
-ny = std_header(s, "PART IV · THE PEOPLE — TEAM",
-                "Built by people who",
-                "chose this problem.")
+ny = std_header(s, "OUR PEOPLE · THE TEAM",
+                "A full-time team of eight, three trustees,",
+                "and 75+ engineering interns nationwide.")
 trustees = [
     ("Amar Srivastava", "President", "Founder, Indian Road Safety Council — 50,000+ volunteers · Diana Award 2019"),
     ("Deepanshu Gupta", "Managing Trustee", "Founder, IRSC · Global Youth Coalition for Road Safety leadership board"),
@@ -531,11 +548,14 @@ footer(s, 14, TOTAL, "THE TEAM")
 s = new_slide(BRAND)
 logo(s, M_L, Inches(0.55), Inches(2.1), dark=True)
 sparkles_tr(s, LAV_DK)
-text(s, M_L, Inches(2.0), Inches(11.9), Inches(1.6),
-     "Every three minutes, the system\nfails someone on an Indian road.", font=HEAD, size=33, bold=True,
+text(s, M_L, Inches(1.85), Inches(11.9), Inches(0.4), "THE YEAR AHEAD", font=HEAD, size=10, bold=True,
+     color=LAV, tracking=2.4)
+text(s, M_L, Inches(2.25), Inches(11.9), Inches(1.6),
+     "Year two: fewer bets, deeper districts,\nand more fixes built on the ground.", font=HEAD, size=30, bold=True,
      color=WHITE, ls=1.15)
-text(s, M_L, Inches(3.55), Inches(11.9), Inches(0.8), "We make it answer.",
-     font=HEAD, size=33, bold=True, color=LAV)
+text(s, M_L, Inches(3.6), Inches(11.9), Inches(0.8),
+     "Every three minutes, a life is lost on an Indian road. Join us in changing that.",
+     font=HEAD, size=15, bold=True, color=LAV)
 hline(s, M_L, Inches(4.6), Inches(11.9), color=LAV_DK)
 text(s, M_L, Inches(4.82), Inches(5.5), Inches(0.3), "YEAR TWO, WITH YOU — THE TARGETS",
      font=HEAD, size=9.5, bold=True, color=LAV, tracking=1.8)
