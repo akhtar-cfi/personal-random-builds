@@ -97,26 +97,27 @@ Full line items (Vertical | Line item | basis | Q1/Q2/Q3/Q4 in Rs L) — this is
 
 ---
 
-## 4. THE DECK — SLIDE MAP (14 slides, 16:9)
+## 4. THE DECK — SLIDE MAP (15 slides, 16:9)
 
 | # | Slide | Layout archetype | Key content |
 |---|---|---|---|
-| 1 | Cover | Brand band right w/ 5 section tags | "From programmes **to institutions.**" · Jul 2026 – Jun 2027 · Rs 6.00 Cr |
+| 1 | Cover | Brand band right w/ 5 section tags + real logo | "From programmes **to institutions.**" · Jul 2026 – Jun 2027 · Rs 6.00 Cr |
 | 2 | Year 1 in review | 2×4 stat grid + brand strip | 31 sites · 18 cities · 25+ approvals · **7+** works begun · 900+ surveys · 120+ victims surveyed · 30+ consultations · 1M+ reached. Strip: 150+ members, 50+ experts, AASHA live, MoUs Gurugram & Jaipur Traffic Police, DRSC in SW Delhi |
 | 3 | Learnings | 5 scorecard rows w/ "IN Y2" column | Credibility is the currency · Awareness alone doesn't move claims · Depth beats breadth · Audits die at submission · Plan what we fund |
-| 4 | Strategy | 3 stacked (Audit/Advocate/Hold Accountable) + brand block | "The Year 2 shift: from programmes to institutions" + 4 bullets |
-| 5 | Focus areas | 1×3 core cards w/ target chips + 2-card bets strip | Cores: Rakshak / H&R / Civic & GovTech; bets strip: SSI + Gig, Rs 0.10 Cr seed chips |
-| 6 | Rakshak deep dive (CORE 01) | 3-track rows + district chips + brand target block | Tracks A/B/C w/ site volumes; targets 150+/100+/75+/12+ DRSC/v1.0 manual; Rs 1.85 Cr |
-| 7 | H&R deep dive (CORE 02) | 4 pillar rows + geography line + brand block | Targets: 2 model districts, −20% processing time, 20-30 claims tracked, 20+ DRSC, report to MoRTH; Rs 0.60 Cr |
-| 8 | Civic & GovTech deep dive (CORE 03) | SATARK pipeline chips + 2×2 proof stats + data-stack line + brand block | Pipeline ANPR→ULIP→rule engine→billboard+app→interception; verified: 3,00,000+ scanned, Rs 30 Cr+ challans, 350+ intercepted, 2 cities live; targets 5 cities / 1,000+ interceptions / 3 partnerships / 4 data products; Rs 1.00 Cr |
-| 9 | The bets | 2 large cards (why-a-bet / THE SEED / THE GATE) + brand strip | SSI: ~100-school rubric pilot; Gig: scoping study + platforms; Rs 0.20 Cr total, stage-gated |
-| 10 | KPIs | 5 scorecard rows: north star + supporting | Rakshak / H&R / Civic & GovTech / Bets / Campaign & Comms |
-| 11 | Gantt | 13 bars, 12 month columns, quarter separators | Groups: Rakshak(4) / H&R(3) / Civic & GovTech(3) / Bets(2) / Campaign(1); italic cadence note at bottom |
-| 12 | Budget | Horizontal bars + brand quarterly-phasing block | Rs 6.00 Cr, 71% programmes; Q phasing 1.23/1.61/1.65/1.52 Cr |
-| 13 | Enablers | 2×2 campaign cards + brand org-backbone block | Swag campaign pillars Rs 0.60 Cr; backbone Rs 1.51 Cr itemised |
-| 14 | Close (full brand bg) | Checklist | "Systems work because we hold them accountable." + 5 success outcomes for Jun 2027 |
+| 4 | **Objectives / destination** | Brand POSITION strip + 2×2 outcome cards w/ "Y3:" kickers | Positioning: "India's audit-and-accountability institution for road safety." Outcomes: Rakshak in institutions / Compensation fixed then replicated / SATARK as public infrastructure (30 cities) / A public evidence brand |
+| 5 | Strategy | 3 stacked (Audit/Advocate/Hold Accountable) + brand block | "The Year 2 shift: from programmes to institutions" + 4 bullets (incl. civic tech) |
+| 6 | Focus areas | 1×3 core cards w/ target chips + 2-card bets strip | Cores: Rakshak / H&R (2 fixed · 8+ mapped) / Civic & GovTech (30 cities); bets strip: SSI + Gig, Rs 0.10 Cr seed chips |
+| 7 | Rakshak deep dive (CORE 01) | 3-track rows + anchor-district line + dashboard browser-frame card + brand target block | "Put the audit pipeline inside institutions"; tracks A/B/C; dashboard card links crashfreeindia.org/rakshak/dashboard **[live screenshot to be inserted — site unreachable from build sandbox]**; targets 150+/100+/75+/12+/v1.0; Rs 1.85 Cr |
+| 8 | H&R deep dive (CORE 02) | 4 pillar rows + fix>pilot>map line + brand block | "Fix two districts, map eight": 2 FIXED (uptake lift, −20% time) / 2+ PILOTING / 8+ MAPPED by Jun 2027 / 20-30 claims tracked / report to MoRTH; Rs 0.60 Cr |
+| 9 | Civic & GovTech deep dive (CORE 03) | SATARK pipeline chips + 2×2 proof stats + data-stack/exploration lines + brand block | "From 2 cities to 30"; verified: 3,00,000+ scanned, Rs 30 Cr+ challans, 350+ intercepted, 2 cities live; targets **30 cities** / 1,000+ interceptions / 4 data products / 2+ govtech opportunities; Rs 1.00 Cr |
+| 10 | The bets | 2 large cards (why-a-bet / THE SEED / THE GATE) + brand strip | SSI: ~100-school rubric pilot; Gig: scoping study + platforms; Rs 0.20 Cr total, stage-gated |
+| 11 | KPIs | 5 scorecard rows: north star + supporting | Rakshak (75+ impl) / H&R (2 fixed, 8+ mapped) / Civic & GovTech (30 cities) / Bets (2 designs) / Campaign (1M+) |
+| 12 | Gantt | 13 bars, 12 month columns, quarter separators | Groups: Rakshak(4) / H&R(3: fix→pilot+map→report) / Civic & GovTech(3: 3 go-lives→30-city wave→data stack) / Bets(2) / Campaign(1) |
+| 13 | Budget | Horizontal bars + brand quarterly-phasing block | Rs 6.00 Cr, 71% programmes; Q phasing 1.23/1.61/1.65/1.52 Cr |
+| 14 | Enablers | 2×2 campaign cards + brand org-backbone block | Swag campaign pillars Rs 0.60 Cr; backbone Rs 1.51 Cr itemised |
+| 15 | Close (full brand bg) | Checklist | "Systems work because we hold them accountable." + 5 success outcomes for Jun 2027 |
 
-Slide-number footers exist on slides 2–13 (`NN / 14`). If adding/removing slides, update `TOTAL` in `build_deck.py` and every `footer(s, idx, TOTAL)` call.
+Slide-number footers exist on slides 2–14 (`NN / 15`). If adding/removing slides, update `TOTAL` in `build_deck.py` and every `footer(s, idx, TOTAL)` call.
 
 ---
 
@@ -142,7 +143,9 @@ Slide-number footers exist on slides 2–13 (`NN / 14`). If adding/removing slid
 5. **SSI 2,000 schools × Rs 3K** is now a *parked* Year-3 candidate (the bet validates the per-school cost first).
 6. **1M+ citizens reached** and **150+ members / 50+ experts** are from prior CFI materials (memory), not re-verified this session.
 7. Bets "~100-school pilot", "3+ platform engagements", Campaign "1M+ engaged" are **targets set in-session** — plausible but Akhtar-unratified.
-8. **Civic & GovTech (v4, 29 Jul):** SATARK *proof stats on slide 8 are verified* from SATARK_Briefing.pdf / _SATARK common.pptx via the repo research brief `research/briefs/C-satark-datastack.md` (3,00,000+ scanned; Rs 30 Cr+ challans surfaced; 350+ intercepted; live Jaipur + Bengaluru — note the PDF-vs-PPTX tension on whether Bengaluru is fully live; internal speaker note says "verify all figures before showing leadership"). The *targets* (5 cities, 1,000+ interceptions, 3 partnerships) and **every budget line in the Rs 1.00 Cr vertical are session-set assumptions — SATARK docs contain no cost data**. Validate against engineering/deployment quotes before board sign-off. Also note: SATARK has no public web footprint (brief H) — keep it internal-facing until cleared.
+8. **Civic & GovTech (v4, 29 Jul):** SATARK *proof stats on slide 9 are verified* from SATARK_Briefing.pdf / _SATARK common.pptx via the repo research brief `research/briefs/C-satark-datastack.md` (3,00,000+ scanned; Rs 30 Cr+ challans surfaced; 350+ intercepted; live Jaipur + Bengaluru — note the PDF-vs-PPTX tension on whether Bengaluru is fully live; internal speaker note says "verify all figures before showing leadership"). **The 30-city target is Akhtar's instruction (29 Jul)**; supporting targets (1,000+ interceptions, 2+ govtech opportunities) and **every budget line in the Rs 1.00 Cr vertical are session-set assumptions — SATARK docs contain no cost data**. The Rs 1 Cr assumes city-side infra (cameras, billboards) is funded by police/partners; CFI funds software, integration & training (~Rs 0.7L/city). Validate before board sign-off. Also note: SATARK has no public web footprint (brief H) — keep it internal-facing until cleared.
+9. **H&R fix/pilot/map framing (29 Jul, Akhtar):** 2 districts fixed + pilots beyond + **8+ districts process-mapped by June 2027** is Akhtar's instruction; "2+ piloting" is a session-set floor — ratify the pilot count.
+10. **Rakshak dashboard card (slide 7):** links crashfreeindia.org/rakshak/dashboard (verified live per brief D, 23 May 2026: 31 blackspots, 7+ interventions tracked). The card is a styled browser-frame placeholder — **crashfreeindia.org is unreachable from the build sandbox, so a real screenshot must be dropped in before circulation** (card carries an explicit note).
 
 ## 7. LOCAL ENVIRONMENT (Claude Code on Akhtar's machine — differs from claude.ai sandbox)
 

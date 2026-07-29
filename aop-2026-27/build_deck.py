@@ -1,5 +1,5 @@
 from helpers import *
-TOTAL=14
+TOTAL=15
 
 # ---------------- S1 COVER ----------------
 s=new_slide()
@@ -67,7 +67,36 @@ for ic,t1,body,nxt in rows:
     ry+=rh+gap
 footer(s,3,TOTAL)
 
-# ---------------- S4 STRATEGY ----------------
+# ---------------- S4 OBJECTIVES / POST-Y2 DESTINATION ----------------
+s=new_slide()
+sparkles_tr(s)
+std_header(s,"OBJECTIVES  ·  THE DESTINATION","What must be true","when Year 2 ends.")
+rect(s,M_L,Inches(2.12),CONTENT_W,Inches(0.72),BRAND,rounded=True)
+text(s,M_L+Inches(0.35),Inches(2.12),CONTENT_W-Inches(0.7),Inches(0.72),
+     [("POSITION  ",{'font':HEAD,'size':9,'bold':True,'color':LAV,'tracking':1.8}),
+      ("By June 2027, CFI is India's audit-and-accountability institution for road safety - the organisation governments call to find where systems break, and to hold the fix to completion.",{'font':BODY,'size':11,'color':WHITE})],
+     anchor=MSO_ANCHOR.MIDDLE,ls=1.3)
+objs=[("hard-hat","Rakshak runs inside institutions",
+       "An audit pipeline owned by universities, NGO partners and certified RSAs - consortium, Audit Manual v1.0 and a public dashboard - that no longer needs CFI to push every audit.","Y3: national scale through chapters"),
+      ("scale","Compensation fixed, then replicated",
+       "Two districts where the hit & run claim pipeline demonstrably works, pilots running beyond them, and the process mapped in 8+ districts - a replication playbook, not a project.","Y3: state-level adoption"),
+      ("radar","SATARK as public infrastructure",
+       "Enforcement intelligence live in 30 cities, plus an active exploration track for new govtech products and digital public goods with government partners.","Y3: the road-safety data layer for government"),
+      ("megaphone","A public evidence brand",
+       "Four open data products cited by committees and press, 1M+ citizens engaged through the campaign, and both bets resolved with board-ready designs.","Y3: evidence citations drive inbound demand")]
+cw=Inches(5.86); ch=Inches(1.78); gx=Inches(0.2); gy=Inches(0.18); y0v=Inches(3.02)
+for i,(ic,t1,body,y3) in enumerate(objs):
+    r_,c_=divmod(i,2)
+    x=M_L+c_*(cw+gx); y=y0v+r_*(ch+gy)
+    rect(s,x,y,cw,ch,BRAND_LITE,rounded=True)
+    circle(s,x+Inches(0.22),y+Inches(0.22),Inches(0.44),WHITE)
+    icon(s,ic,x+Inches(0.31),y+Inches(0.31),Inches(0.26),"#4A35FF")
+    text(s,x+Inches(0.8),y+Inches(0.18),cw-Inches(1.1),Inches(0.3),t1,font=HEAD,size=12,bold=True,color=DARK)
+    text(s,x+Inches(0.8),y+Inches(0.48),cw-Inches(1.1),Inches(0.85),body,font=BODY,size=9.2,color=MUTED,ls=1.25)
+    text(s,x+Inches(0.8),y+ch-Inches(0.32),cw-Inches(1.1),Inches(0.25),y3,font=HEAD,size=8,bold=True,color=BRAND,tracking=1.2)
+footer(s,4,TOTAL)
+
+# ---------------- S5 STRATEGY ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"YEAR 2 STRATEGY","One operating model,","run deeper.")
@@ -95,16 +124,16 @@ for b in bullets:
     circle(s,bx+Inches(0.42),by+Inches(0.08),Inches(0.09),WHITE)
     text(s,bx+Inches(0.68),by,bw-Inches(1.05),Inches(0.6),b,font=BODY,size=10,color=WHITE,ls=1.25)
     by+=Inches(0.64)
-footer(s,4,TOTAL)
+footer(s,5,TOTAL)
 
-# ---------------- S5 FOCUS AREAS ----------------
+# ---------------- S6 FOCUS AREAS ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"KEY FOCUS AREAS","Three core programmes,","two seed-funded bets.",
            "Each core programme has a north-star outcome and a dedicated budget line. Bets carry seed money only - they scale only if their pilots earn it.")
 cards=[("CORE 01  ·  RS 1.85 CR","hard-hat","Project Rakshak","Institutionalise the national audit pipeline: three-track model, Expert Consortium, Audit Manual v1.0.","150+ blackspots audited"),
-       ("CORE 02  ·  RS 0.60 CR","scale","Hit & Run Compensation","Lift claim uptake in two model districts through stage-wise scheme audit and DRSC integration.","Claim uptake up in 2 districts"),
-       ("CORE 03  ·  RS 1.00 CR","radar","Civic & GovTech","Scale SATARK - the AI enforcement co-pilot for traffic police - to five cities, and sustain four open data products.","SATARK live in 5 cities")]
+       ("CORE 02  ·  RS 0.60 CR","scale","Hit & Run Compensation","Fix the claim pipeline in two districts, pilot the playbook beyond them, and map the process in 8+ districts.","2 fixed  ·  8+ mapped"),
+       ("CORE 03  ·  RS 1.00 CR","radar","Civic & GovTech","Scale SATARK - the AI enforcement co-pilot for traffic police - to 30 cities; explore the next govtech products and partnerships.","SATARK live in 30 cities")]
 cw=Inches(3.84); ch=Inches(2.42); gx=Inches(0.2); y=Inches(2.72)
 for i,(kick,ic,title,body,tgt) in enumerate(cards):
     x=M_L+i*(cw+gx)
@@ -131,35 +160,39 @@ for i,(ic,t1,body,chip) in enumerate(bets):
     text(s,x+Inches(0.8),yc+Inches(0.42),bw_-Inches(2.35),Inches(0.55),body,font=BODY,size=8.8,color=MUTED,ls=1.22)
     rect(s,x+bw_-Inches(1.42),yc+Inches(0.33),Inches(1.22),Inches(0.36),BRAND_LITE,rounded=True)
     text(s,x+bw_-Inches(1.42),yc+Inches(0.33),Inches(1.22),Inches(0.36),chip,font=HEAD,size=8.2,bold=True,color=BRAND,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
-footer(s,5,TOTAL)
+footer(s,6,TOTAL)
 
-# ---------------- S6 RAKSHAK DEEP DIVE ----------------
+# ---------------- S7 RAKSHAK DEEP DIVE ----------------
 s=new_slide()
 sparkles_tr(s)
-std_header(s,"DEEP DIVE  ·  CORE 01","Project Rakshak Cohort 2:","institutionalise the audit pipeline.")
+std_header(s,"DEEP DIVE  ·  CORE 01","Project Rakshak:","put the audit pipeline inside institutions.")
 tx=M_L; ty=Inches(2.2)
-text(s,tx,ty,Inches(7.4),Inches(0.3),"THE THREE-TRACK AUDIT MODEL",font=HEAD,size=10,bold=True,color=BRAND,tracking=2.0)
+text(s,tx,ty,Inches(7.5),Inches(0.3),"THE THREE-TRACK MODEL  ·  RUN BY INSTITUTIONS, NOT BY CFI ALONE",font=HEAD,size=10,bold=True,color=BRAND,tracking=1.8)
 tracks=[("A","Institutional","IIT / NIT / SPA student teams under expert mentors; IRC-aligned rubric","~90 sites"),
         ("B","NGO Partners","NGO field teams; 100% desk review + 10-15% physical re-checks by CFI","~20 sites"),
         ("C","Certified RSAs","CRRI-certified auditors; full IRC SP:88 - usable by NHAI without rework","~40 sites")]
-ry=ty+Inches(0.4); rh=Inches(0.92)
+ry=ty+Inches(0.38); rh=Inches(0.78)
 for t,name,body,vol in tracks:
     rect(s,tx,ry,Inches(7.5),rh,WHITE,line=BORDER,rounded=True)
-    circle(s,tx+Inches(0.2),ry+Inches(0.23),Inches(0.46),BRAND)
-    text(s,tx+Inches(0.2),ry+Inches(0.26),Inches(0.46),Inches(0.4),t,font=HEAD,size=15,bold=True,color=WHITE,align=PP_ALIGN.CENTER)
-    text(s,tx+Inches(0.85),ry+Inches(0.13),Inches(2.0),Inches(0.3),name,font=HEAD,size=11.5,bold=True,color=DARK)
-    text(s,tx+Inches(0.85),ry+Inches(0.42),Inches(5.1),Inches(0.48),body,font=BODY,size=9.3,color=MUTED,ls=1.2)
-    rect(s,tx+Inches(6.15),ry+Inches(0.28),Inches(1.15),Inches(0.36),BRAND_LITE,rounded=True)
-    text(s,tx+Inches(6.15),ry+Inches(0.28),Inches(1.15),Inches(0.36),vol,font=HEAD,size=9.5,bold=True,color=BRAND,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
-    ry+=rh+Inches(0.12)
-text(s,tx,ry+Inches(0.08),Inches(7.5),Inches(0.3),"ANCHOR DISTRICTS",font=HEAD,size=10,bold=True,color=BRAND,tracking=2.0)
-chips=["Gurugram (NH-48)","SW Delhi (NH-48/44)","Jaipur (NH-8)","+ 10 exploratory cities"]
-cx=tx
-for ch_ in chips:
-    w=Inches(0.15)+Inches(0.105)*len(ch_)
-    rect(s,cx,ry+Inches(0.42),w,Inches(0.38),BRAND_LITE,rounded=True)
-    text(s,cx,ry+Inches(0.42),w,Inches(0.38),ch_,font=BODY,size=9.5,color=DARK,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
-    cx+=w+Inches(0.15)
+    circle(s,tx+Inches(0.2),ry+Inches(0.16),Inches(0.46),BRAND)
+    text(s,tx+Inches(0.2),ry+Inches(0.19),Inches(0.46),Inches(0.4),t,font=HEAD,size=15,bold=True,color=WHITE,align=PP_ALIGN.CENTER)
+    text(s,tx+Inches(0.85),ry+Inches(0.09),Inches(2.0),Inches(0.3),name,font=HEAD,size=11,bold=True,color=DARK)
+    text(s,tx+Inches(0.85),ry+Inches(0.37),Inches(5.1),Inches(0.4),body,font=BODY,size=9,color=MUTED,ls=1.2)
+    rect(s,tx+Inches(6.15),ry+Inches(0.21),Inches(1.15),Inches(0.36),BRAND_LITE,rounded=True)
+    text(s,tx+Inches(6.15),ry+Inches(0.21),Inches(1.15),Inches(0.36),vol,font=HEAD,size=9.5,bold=True,color=BRAND,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
+    ry+=rh+Inches(0.1)
+text(s,tx,ry+Inches(0.02),Inches(7.5),Inches(0.3),[("Anchor districts:  ",{'font':HEAD,'size':9.5,'bold':True,'color':DARK}),
+     ("Gurugram (NH-48)  ·  SW Delhi (NH-48/44)  ·  Jaipur (NH-8)  ·  +10 exploratory cities",{'font':BODY,'size':9.5,'color':MUTED})])
+# public dashboard reference card (browser frame; drop in live screenshot before circulation)
+dcy=ry+Inches(0.38); dch=Inches(1.05)
+rect(s,tx,dcy,Inches(7.5),dch,WHITE,line=BORDER,rounded=True)
+rect(s,tx,dcy,Inches(7.5),Inches(0.32),BRAND_LITE,rounded=True)
+for j,dc in enumerate((DANGER,WARNING,SUCCESS)):
+    circle(s,tx+Inches(0.18)+j*Inches(0.18),dcy+Inches(0.11),Inches(0.1),dc)
+text(s,tx+Inches(0.85),dcy+Inches(0.05),Inches(6.5),Inches(0.24),"crashfreeindia.org/rakshak/dashboard",font=BODY,size=9,color=MUTED)
+icon(s,"bar-chart-3",tx+Inches(0.22),dcy+Inches(0.46),Inches(0.34),"#4A35FF")
+text(s,tx+Inches(0.72),dcy+Inches(0.40),Inches(6.6),Inches(0.3),"Public accountability dashboard - the institutional spine",font=HEAD,size=10.5,bold=True,color=DARK)
+text(s,tx+Inches(0.72),dcy+Inches(0.66),Inches(6.6),Inches(0.35),"Every site tracked in public: identification > audit > authority review > engineering implementation.  [Insert live dashboard screenshot before circulation]",font=BODY,size=8.8,italic=True,color=MUTED,ls=1.2)
 bx=Inches(8.55); bw=SLIDE_W-bx-M_R
 rect(s,bx,Inches(2.2),bw,Inches(4.5),BRAND,rounded=True)
 text(s,bx+Inches(0.35),Inches(2.5),bw-Inches(0.7),Inches(0.3),"FY 2026-27 TARGETS",font=HEAD,size=10,bold=True,color=LAV,tracking=2.0)
@@ -171,12 +204,12 @@ for num,lab in tgts:
     by+=Inches(0.62)
 hline(s,bx+Inches(0.35),Inches(6.12),bw-Inches(0.7),LAV_DK,1.0)
 text(s,bx+Inches(0.35),Inches(6.26),bw-Inches(0.7),Inches(0.35),[("Budget  ",{'font':BODY,'size':10,'color':LAV}),("Rs 1.85 Cr",{'font':HEAD,'size':13,'bold':True,'color':WHITE})])
-footer(s,6,TOTAL)
+footer(s,7,TOTAL)
 
-# ---------------- S7 H&R DEEP DIVE ----------------
+# ---------------- S8 H&R DEEP DIVE ----------------
 s=new_slide()
 sparkles_tr(s)
-std_header(s,"DEEP DIVE  ·  CORE 02","Hit & Run Compensation:","move the claim rate in two districts.")
+std_header(s,"DEEP DIVE  ·  CORE 02","Hit & Run Compensation:","fix two districts, map eight.")
 tx=M_L; ty=Inches(2.2)
 text(s,tx,ty,Inches(7.4),Inches(0.3),"FOUR PILLARS  ·  AUDIT-LED, RESEARCH-EMBEDDED",font=HEAD,size=10,bold=True,color=BRAND,tracking=2.0)
 pillars=[("search","Scheme audit & process documentation","Stage-wise pipeline audit in Gurugram: FIR to GI Council disbursal; 20-30 claims tracked end-to-end."),
@@ -191,12 +224,12 @@ for ic,t1,body in pillars:
     text(s,tx+Inches(0.82),ry+Inches(0.11),Inches(6.5),Inches(0.3),t1,font=HEAD,size=11,bold=True,color=DARK)
     text(s,tx+Inches(0.82),ry+Inches(0.38),Inches(6.5),Inches(0.42),body,font=BODY,size=9.2,color=MUTED,ls=1.2)
     ry+=rh+Inches(0.1)
-text(s,tx,ry+Inches(0.05),Inches(7.5),Inches(0.55),[("Geography:  ",{'font':HEAD,'size':10,'bold':True,'color':DARK}),
-     ("Gurugram (primary model district)  ·  SW Delhi (second model district)  ·  Jaipur (comparative node)  ·  Bihar / MP / Rajasthan watchlist",{'font':BODY,'size':10,'color':MUTED})],ls=1.3)
+text(s,tx,ry+Inches(0.05),Inches(7.5),Inches(0.55),[("Fix > pilot > map:  ",{'font':HEAD,'size':10,'bold':True,'color':DARK}),
+     ("FIX Gurugram + SW Delhi (measured uptake lift)  ·  PILOT the playbook in Jaipur + watchlist districts  ·  MAP the claim process in 8+ districts by June 2027",{'font':BODY,'size':10,'color':MUTED})],ls=1.3)
 bx=Inches(8.55); bw=SLIDE_W-bx-M_R
 rect(s,bx,Inches(2.2),bw,Inches(4.5),BRAND,rounded=True)
 text(s,bx+Inches(0.35),Inches(2.5),bw-Inches(0.7),Inches(0.3),"FY 2026-27 TARGETS",font=HEAD,size=10,bold=True,color=LAV,tracking=2.0)
-tgts=[("2","model districts with measured claim-uptake lift"),("-20%","median claim processing time vs Q1 baseline"),("20-30","claims tracked FIR to disbursal"),("20+","DRSC meetings with H&R on agenda"),("1","scheme audit report to MoRTH (Apr-May '27)")]
+tgts=[("2","districts FIXED - measured claim-uptake lift, -20% processing time"),("2+","districts PILOTING the fixed-pipeline playbook"),("8+","districts process-MAPPED by June 2027"),("20-30","claims tracked FIR to disbursal"),("1","scheme audit report to MoRTH (Apr-May '27)")]
 by=Inches(2.92)
 for num,lab in tgts:
     text(s,bx+Inches(0.35),by,Inches(1.15),Inches(0.4),num,font=HEAD,size=16,bold=True,color=WHITE)
@@ -204,12 +237,12 @@ for num,lab in tgts:
     by+=Inches(0.62)
 hline(s,bx+Inches(0.35),Inches(6.12),bw-Inches(0.7),LAV_DK,1.0)
 text(s,bx+Inches(0.35),Inches(6.26),bw-Inches(0.7),Inches(0.35),[("Budget  ",{'font':BODY,'size':10,'color':LAV}),("Rs 0.60 Cr",{'font':HEAD,'size':13,'bold':True,'color':WHITE})])
-footer(s,7,TOTAL)
+footer(s,8,TOTAL)
 
-# ---------------- S8 CIVIC & GOVTECH DEEP DIVE ----------------
+# ---------------- S9 CIVIC & GOVTECH DEEP DIVE ----------------
 s=new_slide()
 sparkles_tr(s)
-std_header(s,"DEEP DIVE  ·  CORE 03","Civic & GovTech: enforcement that","knows which vehicle to stop.")
+std_header(s,"DEEP DIVE  ·  CORE 03","Civic & GovTech: take SATARK","from 2 cities to 30.")
 tx=M_L; ty=Inches(2.2)
 text(s,tx,ty,Inches(7.5),Inches(0.3),"SATARK  ·  THE ENFORCEMENT CO-PILOT FOR TRAFFIC POLICE",font=HEAD,size=10,bold=True,color=BRAND,tracking=1.8)
 pipe=["ANPR\nplate scan","ULIP\nvehicle records","SATARK\nrule engine","Billboard +\nofficer app","Interception\nlogged"]
@@ -230,12 +263,12 @@ for i,(num,lab) in enumerate(proof):
     text(s,x+Inches(0.22),y+Inches(0.10),sw_-Inches(0.44),Inches(0.35),num,font=HEAD,size=14.5,bold=True,color=BRAND)
     text(s,x+Inches(0.22),y+Inches(0.44),sw_-Inches(0.44),Inches(0.3),lab,font=BODY,size=8.8,color=MUTED,ls=1.15)
 dy=py+Inches(3.14)
-text(s,tx,dy,Inches(7.5),Inches(0.3),"THE CFI DATA STACK  ·  FOUR OPEN PUBLIC GOODS, SELF-RUNNING",font=HEAD,size=10,bold=True,color=BRAND,tracking=1.8)
-text(s,tx,dy+Inches(0.28),Inches(7.6),Inches(0.55),"Road-Infrastructure Defect Repository (daily, 146 districts)  ·  Road Safety in Parliament (1,423 questions)\nSC Litigation Tracker (18 cases, 190+ orders)  ·  Crash Data Dashboard (RAI 2019-24, open CC-BY)",font=BODY,size=9.3,color=MUTED,ls=1.35)
+text(s,tx,dy,Inches(7.5),Inches(0.3),"BEYOND SATARK  ·  DATA STACK + GOVTECH EXPLORATION",font=HEAD,size=10,bold=True,color=BRAND,tracking=1.8)
+text(s,tx,dy+Inches(0.28),Inches(7.6),Inches(0.55),"Sustain the four open data products: Defect Repository (daily, 146 districts) · Parliament tracker (1,423 questions) · SC Litigation Tracker · Crash Data Dashboard (CC-BY).\nScout the next govtech wedges: new digital public goods, state integrations, and partnerships across the ULIP / MoRTH ecosystem.",font=BODY,size=9.3,color=MUTED,ls=1.35)
 bx=Inches(8.55); bw=SLIDE_W-bx-M_R
 rect(s,bx,Inches(2.2),bw,Inches(4.5),BRAND,rounded=True)
 text(s,bx+Inches(0.35),Inches(2.5),bw-Inches(0.7),Inches(0.3),"FY 2026-27 TARGETS",font=HEAD,size=10,bold=True,color=LAV,tracking=2.0)
-tgts=[("5","cities live with SATARK - add Gurugram, Pune, Ahmedabad"),("1,000+","field interceptions logged (from 350+ today)"),("3","new police partnerships formalised"),("4","open data products sustained & cited in DRSCs and press")]
+tgts=[("30","cities live with SATARK - Gurugram, Pune & Ahmedabad first"),("1,000+","field interceptions logged - a floor, not a ceiling"),("4","open data products sustained & cited in DRSCs and press"),("2+","new govtech / DPG opportunities scoped with partners")]
 by=Inches(2.95)
 for num,lab in tgts:
     text(s,bx+Inches(0.35),by,Inches(1.35),Inches(0.4),num,font=HEAD,size=17,bold=True,color=WHITE)
@@ -243,9 +276,9 @@ for num,lab in tgts:
     by+=Inches(0.72)
 hline(s,bx+Inches(0.35),Inches(6.12),bw-Inches(0.7),LAV_DK,1.0)
 text(s,bx+Inches(0.35),Inches(6.26),bw-Inches(0.7),Inches(0.35),[("Budget  ",{'font':BODY,'size':10,'color':LAV}),("Rs 1.00 Cr",{'font':HEAD,'size':13,'bold':True,'color':WHITE})])
-footer(s,8,TOTAL)
+footer(s,9,TOTAL)
 
-# ---------------- S9 THE BETS ----------------
+# ---------------- S10 THE BETS ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"THE BETS","Two bets, seed-funded now -","scaled only if they earn it.",
@@ -274,16 +307,16 @@ for i,(kick,ic,t1,why,seed,gate) in enumerate(betcards):
 rect(s,M_L,Inches(6.42),CONTENT_W,Inches(0.42),BRAND,rounded=True)
 text(s,M_L,Inches(6.42),CONTENT_W,Inches(0.42),"Bets seed fund Rs 0.20 Cr total  ·  no seed released without a board-approved design  ·  a proven bet returns as a funded Year 3 programme",
      font=HEAD,size=10,bold=True,color=WHITE,align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
-footer(s,9,TOTAL)
+footer(s,10,TOTAL)
 
-# ---------------- S10 KPI SCORECARD ----------------
+# ---------------- S11 KPI SCORECARD ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"OBJECTIVES & KPIs","One north star per programme,","measured quarterly.")
 rows=[
  ("hard-hat","Project Rakshak","75+ implementations initiated","150+ audits · 100+ recommendations accepted · 12+ DRSC presentations · Audit Manual v1.0"),
- ("scale","Hit & Run Compensation","Claim uptake up in 2 model districts","-20% median processing time · 20-30 claims tracked · 20+ DRSC meetings · audit report to MoRTH"),
- ("radar","Civic & GovTech","SATARK live in 5 cities","1,000+ interceptions logged · 3 new police partnerships · 4 open data products cited in DRSCs & press"),
+ ("scale","Hit & Run Compensation","2 districts fixed, 8+ mapped","-20% median processing time · 20-30 claims tracked · pilots beyond model districts · audit report to MoRTH"),
+ ("radar","Civic & GovTech","SATARK live in 30 cities","1,000+ interceptions logged · 4 open data products cited in DRSCs & press · 2+ new govtech opportunities scoped"),
  ("sprout","Bets (SSI + Gig Rider)","2 board-ready pilot designs","SSI rubric validated on ~100 schools · gig scoping study · 3+ platform engagements · seed released only on approval"),
  ("megaphone","Campaign & Comms","1M+ engaged via 'Safety is the New Swag'","50 micro-influencers · OOH in 3-4 cities · monthly field notes · quarterly findings · year-end reports"),
 ]
@@ -298,9 +331,9 @@ for ic,name,ns,supp in rows:
     text(s,M_L+Inches(7.15),ry+Inches(0.12),Inches(1.2),Inches(0.3),"SUPPORTING",font=HEAD,size=7.5,bold=True,color=MUTED,tracking=1.4)
     text(s,M_L+Inches(7.15),ry+Inches(0.36),Inches(4.6),Inches(0.48),supp,font=BODY,size=8.8,color=MUTED,ls=1.2)
     ry+=rh+gap
-footer(s,10,TOTAL)
+footer(s,11,TOTAL)
 
-# ---------------- S11 GANTT ----------------
+# ---------------- S12 GANTT ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"TIMELINE","Twelve months,","phased by quarter.")
@@ -317,12 +350,12 @@ bars=[
  ("","Audit waves (Tracks A/B/C)",1,8,BRAND),
  ("","DRSC submissions & tracking",3,11,BRAND),
  ("","Finale + Audit Manual v1.0",9,11,BRAND),
- ("HIT & RUN","District integration & scheme audit",0,4,BRAND),
- ("","Advocacy & model district",4,6,BRAND),
+ ("HIT & RUN","Fix: district integration & scheme audit",0,4,BRAND),
+ ("","Pilot + map wave (8+ districts)",4,9,BRAND),
  ("","Accountability: report to MoRTH",6,11,BRAND),
- ("CIVIC & GOVTECH","SATARK: Gurugram go-live & rule campaigns",0,3,BRAND),
- ("","SATARK: Pune & Ahmedabad deployments",4,9,BRAND),
- ("","Data stack: publishing & evaluation cadence",0,11,BRAND),
+ ("CIVIC & GOVTECH","SATARK: Gurugram, Pune, Ahmedabad go-lives",0,5,BRAND),
+ ("","SATARK: scale wave to 30 cities",5,11,BRAND),
+ ("","Data stack + govtech exploration",0,11,BRAND),
  ("BETS (SEED)","SSI: rubric pilot on ~100 schools",3,9,BRAND),
  ("","Gig: scoping study & platform talks",3,8,BRAND),
  ("CAMPAIGN","'Safety is the New Swag' build > peak",3,11,BRAND),
@@ -339,9 +372,9 @@ for grp,label,m0,m1,col in bars:
     text(s,gx0+m0*mw+Inches(0.15),ry+Inches(0.015),(m1-m0+1)*mw-Inches(0.25),Inches(0.22),label,font=BODY,size=8.3,color=DARK,ls=1.0)
     ry+=rh+gap
 text(s,M_L,Inches(6.68),CONTENT_W,Inches(0.3),"Running through every month: monthly field notes  ·  quarterly audit findings  ·  Expert Consortium meetings (Sep / Dec / Mar / Jun)",font=BODY,size=9.5,italic=True,color=MUTED)
-footer(s,11,TOTAL)
+footer(s,12,TOTAL)
 
-# ---------------- S12 BUDGET ----------------
+# ---------------- S13 BUDGET ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"BUDGET","Rs 6.00 Cr,","71% into programmes.")
@@ -367,9 +400,9 @@ for q,v in qs:
     by+=Inches(0.72)
 hline(s,bx+Inches(0.35),Inches(6.0),bw-Inches(0.7),LAV_DK,1.0)
 text(s,bx+Inches(0.35),Inches(6.12),bw-Inches(0.7),Inches(0.5),"Detail in the AOP budget\nworkbook (v4, formula-driven).",font=BODY,size=9,color=LAV,ls=1.25)
-footer(s,12,TOTAL)
+footer(s,13,TOTAL)
 
-# ---------------- S13 ENABLERS ----------------
+# ---------------- S14 ENABLERS ----------------
 s=new_slide()
 sparkles_tr(s)
 std_header(s,"ENABLERS","The campaign and the backbone","behind the plan.")
@@ -401,9 +434,9 @@ for ic,lab in org:
     icon(s,ic,bx+Inches(0.35),by,Inches(0.28),"#C8C0FF")
     text(s,bx+Inches(0.78),by-Inches(0.02),bw-Inches(1.15),Inches(0.55),lab,font=BODY,size=9.6,color=WHITE,ls=1.2)
     by+=Inches(0.68)
-footer(s,13,TOTAL)
+footer(s,14,TOTAL)
 
-# ---------------- S14 CLOSE ----------------
+# ---------------- S15 CLOSE ----------------
 s=new_slide(BRAND)
 sparkle(s,Inches(12.30),Inches(0.35),Inches(0.55),LAV)
 sparkle(s,Inches(11.95),Inches(0.80),Inches(0.32),LAV)
@@ -411,9 +444,9 @@ wordmark(s,M_L,Inches(0.6),dark_bg=True)
 eyebrow(s,M_L,Inches(1.7),"WHAT SUCCESS LOOKS LIKE  ·  JUNE 2027",color=LAV)
 text(s,M_L,Inches(2.05),Inches(11),Inches(0.7),"Systems work because",font=HEAD,size=32,bold=True,color=WHITE,ls=1.05)
 text(s,M_L,Inches(2.65),Inches(11),Inches(0.7),"we hold them accountable.",font=HEAD,size=32,bold=True,color=LAV,ls=1.05)
-wins=["75+ engineering implementations initiated through Rakshak's tracked audit pipeline",
-      "Measured claim-uptake lift in two model districts; scheme audit report on MoRTH's table",
-      "SATARK live in five cities with 1,000+ interceptions logged, and four open data products cited in committee rooms",
+wins=["Rakshak running inside institutions: consortium, Audit Manual v1.0, and a public dashboard tracking 75+ implementations",
+      "Claim pipeline fixed in two districts, piloted beyond them, and mapped in 8+ - a replication playbook, not a project",
+      "SATARK live in 30 cities, 1,000+ interceptions logged, and a govtech pipeline positioning CFI as government's road-safety data layer",
       "Two board-ready pilot designs that decide whether School Safety and Gig Rider become funded Year 3 programmes",
       "An Expert Consortium, an Audit Manual, and a publishing cadence that outlive any single cohort"]
 by=Inches(3.6)
