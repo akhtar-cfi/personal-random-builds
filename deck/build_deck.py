@@ -45,19 +45,22 @@ for rn, tag in tags:
         hline(s, BAND_X+Inches(0.5), ty+Inches(0.5), Inches(2.55), color=LAV_DK, wt=0.75)
     ty += Inches(0.72)
 try:
-    _ar = pic_ar(os.path.join(BUILD_DIR, "dhoni_cutout_helmet.png"))
-    DH = Inches(2.8); DW = Inches(2.8*_ar)
-    pic(s, os.path.join(BUILD_DIR, "dhoni_cutout_helmet.png"), SLIDE_W-DW-Inches(0.62), SLIDE_H-DH, w=DW, h=DH)
-    text(s, BAND_X+Inches(0.5), Inches(4.42), Inches(2.7), Inches(0.3),
-         "MS DHONI · GOODWILL AMBASSADOR", font=HEAD, size=7.5, bold=True, color=LAV, tracking=1.4)
-except Exception as e: print("cover dhoni", e)
+    db = os.path.join(V3, "new", "dashboard.png")
+    ar_db = pic_ar(db); dbw = Inches(2.72)
+    rect(s, BAND_X+Inches(0.4), Inches(4.66), dbw+Inches(0.08), Inches(2.72/ar_db)+Inches(0.08), WHITE)
+    pic(s, db, BAND_X+Inches(0.44), Inches(4.7), w=dbw)
+    text(s, BAND_X+Inches(0.44), Inches(4.7)+Inches(2.72/ar_db)+Inches(0.1), dbw, Inches(0.3),
+         "Live: crashfreeindia.org/rakshak/dashboard", font=HEAD, size=7.5, bold=True, color=LAV, tracking=0.8)
+    text(s, BAND_X+Inches(0.44), Inches(6.85), dbw, Inches(0.3),
+         "Goodwill Ambassador: MS Dhoni", font=HEAD, size=8, bold=True, color=LAV, tracking=1.0)
+except Exception as e: print("cover dash", e)
 eyebrow(s, M_L, Inches(2.55), "CRASHFREE INDIA  ·  A CARS24 COMMITMENT")
 text(s, M_L, Inches(2.92), Inches(8.8), Inches(0.75),
-     "Working towards zero road deaths", font=HEAD, size=34, bold=True, color=DARK, ls=1.04)
+     "Building safer roads for India —", font=HEAD, size=34, bold=True, color=DARK, ls=1.04)
 text(s, M_L, Inches(3.54), Inches(8.8), Inches(0.75),
-     "in India by 2040.", font=HEAD, size=34, bold=True, color=BRAND, ls=1.04)
+     "audit by audit, fix by fix.", font=HEAD, size=34, bold=True, color=BRAND, ls=1.04)
 text(s, M_L, Inches(4.35), Inches(8.6), Inches(0.6),
-     "A nonprofit that finds road-safety failures, gets fixes approved by government, and tracks them to completion.",
+     "A nonprofit working alongside government — finding road-safety gaps, getting fixes approved, and staying until they are built.",
      font=BODY, size=13, color=MUTED, ls=1.4)
 pill_labels = ["ROAD INFRASTRUCTURE", "ENFORCEMENT TECHNOLOGY", "POLICY & VICTIM SUPPORT", "YOUTH MOBILISATION"]
 pill_w = [Inches(1.95), Inches(2.2), Inches(2.25), Inches(2.0)]
@@ -78,7 +81,7 @@ text(s, M_L, Inches(6.75), Inches(8.6), Inches(0.35),
 s = new_slide(WHITE)
 ny = std_header(s, "THE PROBLEM",
                 "India loses 485 lives on its roads every day —",
-                "mostly to failures the system can fix.")
+                "most of them preventable with follow-through.")
 text(s, M_L, Inches(2.5), Inches(5.4), Inches(2.1), "485", font=HEAD, size=150, bold=True,
      color=DANGER, align=PP_ALIGN.CENTER, ls=0.9)
 text(s, M_L, Inches(4.75), Inches(5.4), Inches(0.4), "people killed every single day",
@@ -90,7 +93,7 @@ text(s, M_L, Inches(5.85), Inches(5.4), Inches(0.3), "MoRTH, Road Accidents in I
 RX = Inches(6.9)
 text(s, RX, Inches(2.35), Inches(5.7), Inches(1.0), "59%", font=HEAD, size=60, bold=True, color=BRAND)
 text(s, RX, Inches(3.52), Inches(5.6), Inches(0.75),
-     "of road deaths involve no traffic violation by the victim — road design, enforcement and post-crash systems decide who survives.",
+     "of road deaths involve no traffic violation by the victim — better road design, supported enforcement and faster post-crash care decide who survives.",
      font=BODY, size=11.5, color=DARK, ls=1.35)
 rows = [("66% of victims are aged 18–34", "India's workforce bears the loss"),
         ("1% of world's vehicles, 11% of its road deaths", "the gap is systemic"),
@@ -104,7 +107,7 @@ for t1, t2 in rows:
     ry += Inches(0.46)
 rect(s, M_L, Inches(6.25), CONTENT_W, Inches(0.5), BRAND_LITE, rounded=True)
 text(s, M_L+Inches(0.3), Inches(6.25), CONTENT_W-Inches(0.6), Inches(0.5),
-     "India has strong road-safety laws. What has been missing is an institution that makes them work on the ground.",
+     "India has strong laws and committed institutions. What they need is more capacity for follow-through — that is the gap we fill.",
      font=HEAD, size=11.5, bold=True, color=BRAND, anchor=MSO_ANCHOR.MIDDLE)
 footer(s, 2, TOTAL, "THE PROBLEM")
 
@@ -112,20 +115,20 @@ footer(s, 2, TOTAL, "THE PROBLEM")
 s = new_slide(BRAND)
 logo(s, M_L, Inches(0.5), Inches(2.1), dark=True)
 sparkles_tr(s, LAV_DK)
-text(s, M_L, Inches(1.35), Inches(11.9), Inches(0.4), "THE PROBLEM · THREE GAPS", font=HEAD, size=10, bold=True,
+text(s, M_L, Inches(1.35), Inches(11.9), Inches(0.4), "THE PROBLEM · WHERE WE HELP", font=HEAD, size=10, bold=True,
      color=LAV, tracking=2.4)
-text(s, M_L, Inches(1.75), Inches(11.9), Inches(0.65), "Where the system fails today.",
+text(s, M_L, Inches(1.75), Inches(11.9), Inches(0.65), "Three pendencies we help the system clear.",
      font=HEAD, size=30, bold=True, color=WHITE)
 text(s, M_L, Inches(2.42), Inches(11.5), Inches(0.4),
-     "We studied how India responds to a road death. Three gaps repeat everywhere — and no institution owns the follow-through.",
+     "We studied how India responds to a road death. Departments know the problems — what they need is dedicated hands, tools and follow-through.",
      font=BODY, size=12, color=LAV, ls=1.35)
 cards = [
-    ("traffic-cone", "GAP 1 · DANGEROUS ROADS", "Audits stop at the report.",
-     "Hazards get reported and studies get filed — but no institution tracks whether a single fix is ever built."),
-    ("scale", "GAP 2 · COMPENSATION", "₹80,000 Cr sits undelivered.",
-     "10.46 lakh compensation cases pending. In one Gurugram audit: 102 hit-and-run files since 2022 — only 2 settled."),
-    ("siren", "GAP 3 · ENFORCEMENT", "Repeat offenders go unchecked.",
-     "46 crore e-challans issued, ~75% unpaid — while roadside enforcement still stops vehicles at random."),
+    ("traffic-cone", "01 · ROAD FIXES PENDING", "Audits await execution.",
+     "Hazards are identified and studies filed — stretched departments need help converting reports into built fixes."),
+    ("scale", "02 · CLAIMS PENDING", "₹80,000 Cr awaits families.",
+     "10.46 lakh compensation cases pending. Our Gurugram file audit shows where each claim gets stuck — and how to unblock it."),
+    ("siren", "03 · RECORDS UNUSED", "Enforcement lacks live tools.",
+     "46 crore e-challans on record, ~75% unpaid. Police need technology that turns records into targeted, fair action."),
 ]
 cw = Inches(3.85); gap = Inches(0.19); cx = M_L; cy = Inches(3.1); ch = Inches(2.85)
 for icn, kick, t1, t2 in cards:
@@ -140,32 +143,64 @@ for icn, kick, t1, t2 in cards:
          color=LAV, ls=1.3)
     cx += cw + gap
 text(s, M_L, Inches(6.28), Inches(11.9), Inches(0.4),
-     "The distance between what is known and what gets done is the gap Crashfree India was created to close.",
+     "Our role: give the system the hands, tools and follow-through to convert intent into outcomes on the ground.",
      font=HEAD, size=12.5, bold=True, color=WHITE, ls=1.3)
-footer_dark(s, 3, "THE PROBLEM · THREE GAPS")
+footer_dark(s, 3, "THE PROBLEM · WHERE WE HELP")
 
 # ============================================================ 04 ABOUT
 s = new_slide(WHITE)
 ny = std_header(s, "WHO WE ARE · ABOUT CRASHFREE INDIA",
-                "A nonprofit institution working towards",
-                "zero road deaths in India by 2040.",
-                "Launched in June 2025 and funded by Cars24, we identify road-safety failures, get fixes approved by government, and track every fix to completion.")
-tiles = [
-    ("calendar", "Founded June 2025", "Launched by Cars24 with the Indian Road Safety Campaign; roots in a decade of IRSC campus audit work."),
-    ("indian-rupee", "$3M over 3 years", "Cars24's committed institutional funding — programme-first: 71% of FY26-27 budget goes to programmes."),
-    ("landmark", "Vision Zero Trust", "Registered public trust; trustees include Cars24 co-founder Gajendra Jangid."),
-    ("target", "One north star", "Zero road fatalities in India by 2040 — pursued as system repair, not sensitisation."),
-    ("map-pin", "18 cities and counting", "Programmes live across India — Delhi NCR, Jaipur, Indore, Bengaluru, Chennai, Guwahati and more."),
-    ("mic", "MS Dhoni", "Goodwill Ambassador since April 2026 — lending India's most trusted voice to the cause."),
-]
-cw = Inches(3.85); ch = Inches(1.62); gap = Inches(0.19)
-for i,(icn,t1,t2) in enumerate(tiles):
-    x = M_L + (i%3)*(cw+gap); y = Inches(2.95) + (i//3)*(ch+Inches(0.2))
-    rect(s, x, y, cw, ch, WHITE, line=BORDER, rounded=True)
-    circle(s, x+Inches(0.22), y+Inches(0.22), Inches(0.44), BRAND_LITE)
-    icon(s, icn, x+Inches(0.31), y+Inches(0.31), Inches(0.26), BLUE_HEX)
-    text(s, x+Inches(0.8), y+Inches(0.24), cw-Inches(1.0), Inches(0.3), t1, font=HEAD, size=12.5, bold=True, color=DARK)
-    text(s, x+Inches(0.22), y+Inches(0.72), cw-Inches(0.44), Inches(0.85), t2, font=BODY, size=9.5, color=MUTED, ls=1.28)
+                "A partner to the system — with the",
+                "hands and tools to finish the job.",
+                "A Cars24-backed nonprofit ($3M over 3 years, run by Vision Zero Trust) working with governments towards zero road deaths by 2040.")
+# left: philosophy + impact
+rect(s, M_L, Inches(2.85), Inches(6.1), Inches(2.15), BRAND, rounded=True)
+text(s, M_L+Inches(0.3), Inches(3.05), Inches(5.5), Inches(0.3), "OUR PHILOSOPHY",
+     font=HEAD, size=9, bold=True, color=LAV, tracking=1.8)
+text(s, M_L+Inches(0.3), Inches(3.38), Inches(5.55), Inches(0.85),
+     "Road deaths are a solvable systems problem. We work as a support layer to government — auditing on the ground, building tools, and staying with every fix until it is done.",
+     font=BODY, size=11.5, color=WHITE, ls=1.4)
+loop = ["AUDIT", "ADVOCATE", "FOLLOW THROUGH"]
+lx = M_L+Inches(0.3)
+for i, lstep in enumerate(loop):
+    wd = Inches(0.4 + 0.085*len(lstep))
+    rect(s, lx, Inches(4.35), wd, Inches(0.36), BRAND_MID, rounded=True)
+    text(s, lx, Inches(4.35), wd, Inches(0.36), lstep, font=HEAD, size=8.5, bold=True, color=WHITE,
+         align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, tracking=0.8)
+    lx += wd + Inches(0.08)
+    if i < 2:
+        icon(s, "arrow-right", lx-Inches(0.02), Inches(4.42), Inches(0.2), "#C8C0FF")
+        lx += Inches(0.24)
+imp = [("1M+", "people reached"), ("18", "cities"), ("25+", "govt approvals"), ("₹30 Cr+", "dues surfaced")]
+ix = M_L
+for num, lab in imp:
+    rect(s, ix, Inches(5.2), Inches(1.45), Inches(0.85), BRAND_LITE, rounded=True)
+    text(s, ix, Inches(5.3), Inches(1.45), Inches(0.4), num, font=HEAD, size=15, bold=True, color=BRAND, align=PP_ALIGN.CENTER)
+    text(s, ix, Inches(5.68), Inches(1.45), Inches(0.3), lab, font=BODY, size=7.8, color=MUTED, align=PP_ALIGN.CENTER)
+    ix += Inches(1.56)
+# right: four pillars
+text(s, Inches(7.15), Inches(2.85), Inches(5.3), Inches(0.3), "FOUR PILLARS OF WORK",
+     font=HEAD, size=9, bold=True, color=MUTED, tracking=1.8)
+pillars4 = [("hard-hat", "Road infrastructure", "Project Rakshak — audits that end in built fixes"),
+            ("scan-line", "Enforcement technology", "SATARK & AI billboards, run with police"),
+            ("hand-helping", "Policy & victim support", "Aasha, compensation research, district committees"),
+            ("bar-chart-3", "Open data & education", "Public dashboards, comics, guides")]
+py5 = Inches(3.18)
+for icn, t1, t2 in pillars4:
+    circle(s, Inches(7.15), py5, Inches(0.4), BRAND_LITE)
+    icon(s, icn, Inches(7.235), py5+Inches(0.085), Inches(0.23), BLUE_HEX)
+    text(s, Inches(7.7), py5-Inches(0.02), Inches(4.9), Inches(0.26), t1, font=HEAD, size=11, bold=True, color=DARK)
+    text(s, Inches(7.7), py5+Inches(0.25), Inches(4.9), Inches(0.26), t2, font=BODY, size=9, color=MUTED)
+    py5 += Inches(0.72)
+# bottom: governance strip
+rect(s, M_L, Inches(6.25), CONTENT_W, Inches(0.62), WHITE, line=BORDER, rounded=True)
+text(s, M_L+Inches(0.25), Inches(6.32), CONTENT_W-Inches(0.5), Inches(0.5),
+     [("Trustees:  ", {'font':HEAD,'size':9,'bold':True,'color':BRAND}),
+      ("Amar Srivastava (Founder, IRSC) · Deepanshu Gupta (Founder, IRSC) · Gajendra Jangid (Co-founder, Cars24)      ",
+       {'font':BODY,'size':9,'color':DARK}),
+      ("Board of Advisors:  ", {'font':HEAD,'size':9,'bold':True,'color':BRAND}),
+      ("Piyush Tewari (SaveLIFE Foundation) · Prof. Geetam Tiwari (IIT Delhi)", {'font':BODY,'size':9,'color':DARK})],
+     ls=1.35)
 footer(s, 4, TOTAL, "ABOUT CRASHFREE INDIA")
 
 # ============================================================ 05 APPROACH
@@ -191,9 +226,9 @@ for i,(icn, t1, t15, t2) in enumerate(steps):
     bx += bw + agap
 RX = Inches(9.35); RW = Inches(3.28)
 rect(s, RX, Inches(2.55), RW, Inches(3.3), BRAND, rounded=True)
-text(s, RX+Inches(0.3), Inches(2.82), RW-Inches(0.6), Inches(0.3), "WHAT WE DELIBERATELY AVOID",
+text(s, RX+Inches(0.3), Inches(2.82), RW-Inches(0.6), Inches(0.3), "HOW WE STAY FOCUSED",
      font=HEAD, size=9.5, bold=True, color=LAV, tracking=1.8)
-refusals = ["Awareness-only campaigns", "Event counts as impact", "Replacing government's role", "Reports without follow-up"]
+refusals = ["No campaigns without follow-up", "No event-counting as impact", "Never duplicating govt's role", "No reports that end at submission"]
 ry = Inches(3.25)
 for rtxt in refusals:
     circle(s, RX+Inches(0.3), ry+Inches(0.02), Inches(0.26), BRAND_MID)
@@ -246,39 +281,52 @@ ny = std_header(s, "WHAT WE DO · 01 ROAD INFRASTRUCTURE",
                 "Project Rakshak — engineering students",
                 "audit dangerous roads; governments fix them.",
                 "A national programme that mobilises trained student teams to audit high-risk locations to official standards and hand authorities ready-to-build fixes.")
-funnel = [("120+", "high-risk locations\nscreened nationwide"),
-          ("31", "sites fully audited,\nincl. 11 official blackspots"),
-          ("25+", "written government\napprovals secured"),
-          ("15", "implementations\nbegun on the ground")]
-fx = M_L; fy = Inches(2.95); fw = Inches(1.92); fh = Inches(1.6)
+whyrows = [
+    ("WHY THIS", "Black spots are known and studied — converting reports into built fixes is the bottleneck we remove."),
+    ("HOW IT WORKS", "Trained student teams audit to IRC / MoRTH standards and hand authorities ready-to-approve proposals."),
+    ("WHY WE'RE PLACED TO DO IT", "A 9-IIT talent pipeline, mentors led by Prof. Geetam Tiwari (IIT Delhi), and a public tracking dashboard."),
+]
+wx = M_L
+for kick, body in whyrows:
+    text(s, wx, Inches(2.62), Inches(2.6), Inches(0.25), kick, font=HEAD, size=8.3, bold=True, color=BRAND, tracking=1.2)
+    text(s, wx, Inches(2.88), Inches(2.62), Inches(0.85), body, font=BODY, size=8.8, color=MUTED, ls=1.28)
+    wx += Inches(2.82)
+funnel = [("120+", "locations\nscreened"), ("31", "sites audited ·\n11 blackspots"),
+          ("25+", "government\napprovals"), ("15", "builds\nbegun")]
+fx = M_L; fy = Inches(3.95); fw = Inches(1.85); fh = Inches(1.42)
 for i,(num,lab) in enumerate(funnel):
     fill = BRAND if i==3 else BRAND_LITE
     tcol = WHITE if i==3 else BRAND
     lcol = LAV if i==3 else MUTED
     rect(s, fx, fy, fw, fh, fill, rounded=True)
-    text(s, fx, fy+Inches(0.14), fw, Inches(0.65), num, font=HEAD, size=28, bold=True, color=tcol, align=PP_ALIGN.CENTER)
-    text(s, fx, fy+Inches(0.8), fw, Inches(0.7), lab, font=BODY, size=8.8, color=lcol, align=PP_ALIGN.CENTER, ls=1.2)
+    text(s, fx, fy+Inches(0.12), fw, Inches(0.6), num, font=HEAD, size=25, bold=True, color=tcol, align=PP_ALIGN.CENTER)
+    text(s, fx, fy+Inches(0.72), fw, Inches(0.6), lab, font=BODY, size=8.5, color=lcol, align=PP_ALIGN.CENTER, ls=1.18)
     if i < 3:
-        icon(s, "chevron-right", fx+fw+Inches(0.015), fy+fh/2-Inches(0.12), Inches(0.24), LAVDK_HEX)
-    fx += fw + Inches(0.27)
-chips_row = ["18 cities", "20 institutions · 9 IITs", "900+ stakeholder surveys"]
-cxx = M_L; cyy = Inches(4.75)
-widths = [Inches(1.5), Inches(2.6), Inches(2.5)]
-for wd, ct in zip(widths, chips_row):
-    chip(s, cxx, cyy, wd, Inches(0.42), ct, fill=WHITE, tcolor=DARK, size=9.5, line=BORDER)
-    cxx += wd + Inches(0.18)
-rect(s, M_L, Inches(5.4), Inches(8.5), Inches(1.3), BRAND_LITE, rounded=True)
-icon(s, "hard-hat", M_L+Inches(0.3), Inches(5.62), Inches(0.34), BLUE_HEX)
-text(s, M_L+Inches(0.82), Inches(5.56), Inches(7.4), Inches(0.3), "Example: Tejaji Nagar Junction, Indore",
-     font=HEAD, size=12, bold=True, color=DARK)
-text(s, M_L+Inches(0.82), Inches(5.9), Inches(7.5), Inches(0.75),
-     "Student-audited redesign to IRC / MoRTH standards — signals, lighting, footpaths, speed management — approved by CPWD and the Additional Collector's office. Guided by Prof. Geetam Tiwari (TRIPC, IIT Delhi).",
-     font=BODY, size=10, color=MUTED, ls=1.3)
+        icon(s, "chevron-right", fx+fw+Inches(0.005), fy+fh/2-Inches(0.11), Inches(0.22), LAVDK_HEX)
+    fx += fw + Inches(0.23)
+text(s, M_L, Inches(5.5), Inches(8.2), Inches(0.28),
+     "18 cities · 20 institutions incl. 9 IITs · 900+ stakeholder surveys · every site public on the dashboard",
+     font=HEAD, size=9, bold=True, color=DARK, tracking=0.3)
+rect(s, M_L, Inches(5.92), Inches(8.2), Inches(0.72), BRAND_LITE, rounded=True)
+icon(s, "landmark", M_L+Inches(0.25), Inches(6.12), Inches(0.3), BLUE_HEX)
+text(s, M_L+Inches(0.7), Inches(5.98), Inches(7.4), Inches(0.6),
+     "Institutionalising the model: Cohort 2 runs three tracks — students, NGO partners, CRRI-certified auditors — building towards the Rakshak Audit Manual v1.0, usable by NHAI without rework.",
+     font=BODY, size=9.5, color=DARK, ls=1.3, anchor=MSO_ANCHOR.MIDDLE)
 try:
-    pic(s, os.path.join(BUILD_DIR, "india_map.png"), Inches(9.55), Inches(2.55), h=Inches(3.7))
-except Exception as e: print("map", e)
-text(s, Inches(9.35), Inches(6.4), Inches(3.5), Inches(0.25), "Every audit public: crashfreeindia.org/rakshak/dashboard",
-     font=BODY, size=8.5, color=MUTED, italic=True, align=PP_ALIGN.CENTER)
+    db = os.path.join(V3, "new", "dashboard.png")
+    ar = pic_ar(db); dw_ = Inches(3.55)
+    rect(s, Inches(9.04), Inches(2.58), dw_+Inches(0.08), Inches(3.55/ar)+Inches(0.08), WHITE, line=BORDER)
+    pic(s, db, Inches(9.08), Inches(2.62), w=dw_)
+    text(s, Inches(9.08), Inches(2.62)+Inches(3.55/ar)+Inches(0.08), dw_, Inches(0.3),
+         "The live implementation dashboard — every site, authority and status public.",
+         font=BODY, size=8.2, color=MUTED, italic=True, ls=1.15)
+    for j, (ivf, cap) in enumerate([("iv_indore_footpath", "Footpath — Indore"), ("iv_durgapur_parking", "Parking — Durgapur")]):
+        p_ = os.path.join(V3, "new", f"{ivf}.png")
+        arp = pic_ar(p_); ph_ = Inches(1.62)
+        pic(s, p_, Inches(9.08)+j*Inches(1.85), Inches(4.95), h=ph_)
+        text(s, Inches(9.08)+j*Inches(1.85), Inches(6.6), Inches(1.7), Inches(0.25), cap,
+             font=BODY, size=7.5, color=MUTED, italic=True)
+except Exception as e: print("rakshak visuals", e)
 footer(s, 7, TOTAL, "WHAT WE DO · PROJECT RAKSHAK")
 
 # ============================================================ 08 RAKSHAK APPROVALS (letter wall)
@@ -330,7 +378,7 @@ for i, st in enumerate(steps):
         px2 += Inches(0.14)
 rect(s, M_L, Inches(6.05), Inches(6.4), Inches(0.6), BRAND_LITE, rounded=True)
 text(s, M_L+Inches(0.25), Inches(6.05), Inches(6.0), Inches(0.6),
-     "First 72 hours in Jaipur: 1,240 vehicles flagged, 58 intercepted. 100 AI challan billboards live in Gurugram; 12+ cities in discussion.",
+     "Built with police, not for them — departments set the flagging rules; CFI provides the technology. First 72 hours in Jaipur: 1,240 flagged, 58 intercepted.",
      font=HEAD, size=10, bold=True, color=BRAND, anchor=MSO_ANCHOR.MIDDLE, ls=1.25)
 try:
     bp = os.path.join(V3, "embedded", "stk_p1_x20.png")
@@ -365,8 +413,8 @@ fix_rows = [
     ("bot", "Aasha — India's first 24/7 multilingual AI chatbot guiding victims step-by-step on WhatsApp & voice"),
     ("calculator", "Free Compensation Calculator based on Supreme Court principles (Sarla Verma, Pranay Sethi)"),
     ("hand-helping", "Legal helpdesks in hospital trauma wards — 100+ victims supported in the first 4 days"),
-    ("book-open", "Comic books and Hindi guides explaining rights, schemes and the claim process"),
-    ("landmark", "'Justice Unserved' research presented to MoRTH; claim pipeline rebuild with Rajasthan Transport Dept."),
+    ("landmark", "Embedded in 4 District Road Safety Committees — formally tasked by SW Delhi DRSC; fellow placed with Gurugram district offices"),
+    ("route", "'Justice Unserved' presented to MoRTH; hit-and-run claim pipeline rebuild underway with Rajasthan Transport Dept."),
 ]
 fy2 = LY + Inches(0.56)
 for icn, lab in fix_rows:
@@ -379,10 +427,12 @@ try:
     ar = pic_ar(g1); gh = Inches(2.95); gw_ = Inches(2.95*ar)
     rect(s, Inches(8.06), Inches(3.58), gw_+Inches(0.08), gh+Inches(0.08), WHITE, line=BORDER)
     pic(s, g1, Inches(8.1), Inches(3.62), h=gh)
-    g2 = os.path.join(V3, "extracted", "guide_p2.png")
-    pic(s, g2, Inches(8.1)+gw_+Inches(0.18), Inches(3.62), h=gh)
+    ju = os.path.join(V3, "new", "comp_image1.png")
+    arj = pic_ar(ju)
+    rect(s, Inches(8.1)+gw_+Inches(0.14), Inches(3.58), Inches(2.95*arj)+Inches(0.08), gh+Inches(0.08), WHITE, line=BORDER)
+    pic(s, ju, Inches(8.14)+gw_+Inches(0.14), Inches(3.62), h=gh)
     text(s, Inches(8.1), Inches(6.62), Inches(4.5), Inches(0.3),
-         "Public legal-rights guides (Hindi) — distributed at hospitals and police stations.",
+         "Hindi legal-rights guide (hospitals & police stations) · 'Justice Unserved' research brief.",
          font=BODY, size=8.5, color=MUTED, italic=True)
 except Exception as e: print("guides", e)
 footer(s, 10, TOTAL, "WHAT WE DO · VICTIM SUPPORT")
@@ -474,13 +524,14 @@ s = new_slide(BRAND_LITE)
 ny = std_header(s, "IMPACT · OUR FIRST YEAR",
                 "Year one: measurable results",
                 "across 18 Indian cities.")
-tiles = [("1M+", "citizens reached"), ("18", "cities active"), ("25+", "govt approvals won"),
-         ("15", "implementations begun"), ("4", "district committees joined"), ("2", "cities enforcing with SATARK"),
-         ("150+", "members & interns"), ("50+", "experts engaged"), ("10+", "national media features")]
+tiles = [("1M+", "citizens reached", "users"), ("18", "cities active", "map-pin"), ("25+", "govt approvals won", "badge-check"),
+         ("15", "implementations begun", "hard-hat"), ("4", "district committees joined", "landmark"), ("2", "cities enforcing with SATARK", "scan-line"),
+         ("150+", "members & interns", "users-round"), ("50+", "experts engaged", "graduation-cap"), ("10+", "national media features", "newspaper")]
 cw = Inches(2.55); ch = Inches(1.06); gapx = Inches(0.18); gapy = Inches(0.16)
-for i,(num,lab) in enumerate(tiles):
+for i,(num,lab,icn) in enumerate(tiles):
     x = M_L + (i%3)*(cw+gapx); y = Inches(2.5) + (i//3)*(ch+gapy)
     rect(s, x, y, cw, ch, WHITE, line=BORDER, rounded=True)
+    icon(s, icn, x+cw-Inches(0.48), y+Inches(0.16), Inches(0.26), "#C8C0FF")
     text(s, x+Inches(0.22), y+Inches(0.12), cw-Inches(0.4), Inches(0.5), num, font=HEAD, size=23, bold=True, color=BRAND)
     text(s, x+Inches(0.22), y+Inches(0.62), cw-Inches(0.4), Inches(0.35), lab, font=BODY, size=9.3, color=MUTED)
 TX = Inches(9.15); TW = Inches(3.48)
@@ -692,7 +743,7 @@ for icn, t in contact:
     text(s, Inches(7.58), cy2, Inches(5.0), Inches(0.3), t, font=BODY, size=10.5, color=WHITE)
     cy2 += Inches(0.42)
 text(s, M_L, Inches(6.6), Inches(11.9), Inches(0.35),
-     "Systems work when someone holds them accountable. That is the job we have taken on.",
+     "Lasting change happens when someone owns the follow-through. That is the job we have taken on.",
      font=HEAD, size=12, bold=True, color=WHITE, italic=True)
 text(s, M_L, Inches(7.05), Inches(11.9), Inches(0.3),
      "Crashfree India · A Cars24 Commitment · operated by Vision Zero Trust", font=HEAD, size=8.5,
@@ -845,18 +896,27 @@ gaps5 = [
     ("trending-down", "Adequacy", "Informal workers valued at minimum wage; courts repeatedly enhance awards on appeal."),
     ("users", "Equity", "14% of low-income households receive insurance compensation vs 24% of high-income."),
 ]
-cw = Inches(2.28); ch = Inches(2.3); cx = M_L; cy = Inches(3.0)
+cw = Inches(2.28); ch = Inches(1.85); cx = M_L; cy = Inches(2.75)
 for icn, t1, t2 in gaps5:
     rect(s, cx, cy, cw, ch, WHITE, line=BORDER, rounded=True)
-    circle(s, cx+Inches(0.2), cy+Inches(0.2), Inches(0.46), BRAND_LITE)
-    icon(s, icn, cx+Inches(0.29), cy+Inches(0.29), Inches(0.28), BLUE_HEX)
-    text(s, cx+Inches(0.2), cy+Inches(0.78), cw-Inches(0.4), Inches(0.3), t1, font=HEAD, size=11.5, bold=True, color=DARK)
-    text(s, cx+Inches(0.2), cy+Inches(1.1), cw-Inches(0.4), Inches(1.1), t2, font=BODY, size=8.6, color=MUTED, ls=1.25)
+    circle(s, cx+Inches(0.2), cy+Inches(0.17), Inches(0.4), BRAND_LITE)
+    icon(s, cx and icn, cx+Inches(0.28), cy+Inches(0.25), Inches(0.24), BLUE_HEX)
+    text(s, cx+Inches(0.2), cy+Inches(0.64), cw-Inches(0.4), Inches(0.3), t1, font=HEAD, size=11, bold=True, color=DARK)
+    text(s, cx+Inches(0.2), cy+Inches(0.94), cw-Inches(0.4), Inches(0.9), t2, font=BODY, size=8.3, color=MUTED, ls=1.22)
     cx += cw + Inches(0.15)
-rect(s, M_L, Inches(5.65), CONTENT_W, Inches(0.9), BRAND, rounded=True)
-text(s, M_L+Inches(0.3), Inches(5.65), CONTENT_W-Inches(0.6), Inches(0.9),
-     "Headline finding: only 205 hit-and-run claims were filed in FY22-23 against ~25,000 eligible crashes — under 1%. The scheme exists; the pipeline to reach it does not.",
-     font=HEAD, size=12, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE, ls=1.3)
+try:
+    js = os.path.join(V3, "new", "journey_strip.png")
+    arj = pic_ar(js); jw = Inches(8.0); jh = Inches(8.0)/arj
+    rect(s, M_L-Inches(0.04), Inches(4.81), jw+Inches(0.08), jh+Inches(0.08), WHITE, line=BORDER)
+    pic(s, js, M_L, Inches(4.85), w=jw)
+    text(s, M_L, Inches(4.85)+jh+Inches(0.07), jw, Inches(0.25),
+         "The claim journey we mapped in Jaipur — six institutions from FIR to payment; every hand-off manual today.",
+         font=BODY, size=8.3, color=MUTED, italic=True)
+except Exception as e: print("journey", e)
+rect(s, Inches(9.0), Inches(4.81), Inches(3.63), Inches(1.9), BRAND, rounded=True)
+text(s, Inches(9.3), Inches(4.81), Inches(3.05), Inches(1.9),
+     "205 claims filed vs ~25,000 eligible.\nThe pipeline, not the scheme, is the gap — so that is what we are fixing, office by office.",
+     font=HEAD, size=10.5, bold=True, color=WHITE, anchor=MSO_ANCHOR.MIDDLE, ls=1.35)
 footer(s, 22, TOTAL, "APPENDIX · JUSTICE UNSERVED")
 
 # ============================================================ 23 A5 DATA PLATFORMS DETAIL
@@ -915,13 +975,20 @@ for icn, t1, t2 in edu:
     text(s, M_L+Inches(0.6), ey2+Inches(0.26), Inches(7.2), Inches(0.5), t2, font=BODY, size=8.8, color=MUTED, ls=1.22)
     ey2 += Inches(0.78)
 try:
+    st_ = os.path.join(V3, "new", "rkf_p4.png")
+    ar = pic_ar(st_); nw_ = Inches(3.55)
+    rect(s, Inches(9.06), Inches(2.51), nw_+Inches(0.08), Inches(3.55/ar)+Inches(0.08), WHITE, line=BORDER)
+    pic(s, st_, Inches(9.1), Inches(2.55), w=nw_)
+    text(s, Inches(9.1), Inches(2.55)+Inches(3.55/ar)+Inches(0.1), nw_, Inches(0.4),
+         "On stage at the National Road Safety Implementation Forum, IIT Delhi — April 2026.",
+         font=BODY, size=8.3, color=MUTED, italic=True, ls=1.2)
     nm1 = os.path.join(V3, "extracted", "nextmile_p1.png")
-    ar = pic_ar(nm1); nh = Inches(3.9)
-    rect(s, Inches(9.06), Inches(2.51), Inches(3.9*ar)+Inches(0.08), nh+Inches(0.08), WHITE, line=BORDER)
-    pic(s, nm1, Inches(9.1), Inches(2.55), h=nh)
-    text(s, Inches(9.1), Inches(6.5), Inches(3.2), Inches(0.3), "The NextMile newsletter — full ideathon report.",
+    ar2 = pic_ar(nm1); nh2 = Inches(2.2)
+    rect(s, Inches(9.06), Inches(4.66), Inches(2.2*ar2)+Inches(0.08), nh2+Inches(0.08), WHITE, line=BORDER)
+    pic(s, nm1, Inches(9.1), Inches(4.7), h=nh2)
+    text(s, Inches(9.1), Inches(6.95)-Inches(0.02), Inches(3.2), Inches(0.25), "The NextMile newsletter.",
          font=BODY, size=8.3, color=MUTED, italic=True)
-except Exception as e: print("nm page", e)
+except Exception as e: print("a6 visuals", e)
 footer(s, 24, TOTAL, "APPENDIX · NEXTMILE & EDUCATION")
 
 # ============================================================ 25 A7 PRESS & CONTACT
@@ -936,10 +1003,24 @@ press = [
 ]
 py4 = Inches(2.4)
 for t1, t2 in press:
-    rect(s, M_L, py4, Inches(11.9), Inches(0.86), WHITE, line=BORDER, rounded=True)
-    text(s, M_L+Inches(0.25), py4+Inches(0.12), Inches(4.2), Inches(0.5), t1, font=HEAD, size=10.5, bold=True, color=DARK, ls=1.15)
-    text(s, M_L+Inches(4.6), py4+Inches(0.12), Inches(7.0), Inches(0.6), t2, font=BODY, size=9, color=MUTED, ls=1.25)
+    rect(s, M_L, py4, Inches(9.0), Inches(0.86), WHITE, line=BORDER, rounded=True)
+    text(s, M_L+Inches(0.25), py4+Inches(0.12), Inches(3.3), Inches(0.5), t1, font=HEAD, size=10, bold=True, color=DARK, ls=1.15)
+    text(s, M_L+Inches(3.7), py4+Inches(0.12), Inches(5.1), Inches(0.6), t2, font=BODY, size=8.8, color=MUTED, ls=1.25)
     py4 += Inches(0.98)
+try:
+    dh = os.path.join(V3, "new", "comp_image3.png")
+    ardh = pic_ar(dh); dhw = Inches(1.9); dhh = Inches(1.9/ardh)
+    rect(s, Inches(9.9), Inches(2.4), dhw+Inches(0.08), dhh+Inches(0.08), WHITE, line=BORDER)
+    pic(s, dh, Inches(9.94), Inches(2.44), w=dhw)
+    isc = os.path.join(V3, "new", "comp_image5.jpeg")
+    aris = pic_ar(isc)
+    iy0 = Inches(2.44) + dhh + Inches(0.22)
+    ish = Inches(6.05) - iy0
+    rect(s, Inches(9.9), iy0-Inches(0.04), Inches(0.08)+ish*aris, ish+Inches(0.08), WHITE, line=BORDER)
+    pic(s, isc, Inches(9.94), iy0, h=ish)
+    text(s, Inches(9.9), Inches(6.12), Inches(2.7), Inches(0.3), "IndiaSpend citing CFI research, 2026.",
+         font=BODY, size=7.8, color=MUTED, italic=True)
+except Exception as e: print("press visuals", e)
 rect(s, M_L, Inches(6.35), Inches(11.9), Inches(0.55), BRAND, rounded=True)
 text(s, M_L+Inches(0.3), Inches(6.35), Inches(11.3), Inches(0.55),
      "crashfreeindia.org  ·  helpdesk@crashfreeindia.org  ·  WhatsApp +91 78380 59367  ·  Live dashboard: crashfreeindia.org/rakshak/dashboard",
