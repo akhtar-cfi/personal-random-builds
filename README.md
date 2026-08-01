@@ -11,10 +11,17 @@ plus the investor/grantee overview deck built from that context.
   ("Crashfree India — Systems work because we hold them accountable."), built to the CFI
   design system (Montserrat/Geist, brand indigo #4A35FF, 16:9).
 - Matching PDF export (fonts embedded — safest for sharing).
-- `build_deck.py` + `cfi_helpers.py` — the python-pptx build system. Edit the script,
-  run it, and the deck regenerates. `DECK_SPEC.md` is the slide-by-slide narrative spec
-  with the canonical numbers used.
-- `assets/` — official logo (blue + white), CFI's India coverage map, Dhoni announcement creative.
+- **`CFI_NRSB-WG2-Application_v1_2026-08-01.pptx`** (20 slides) and
+  **`CFI_NRSB-WG5-Application_v1_2026-08-01.pptx`** (19 slides) — application decks
+  accompanying CFI's one-pager EoIs to the National Road Safety Board Working Groups
+  (WG-2 Safe Roads, Speeds & VRUs — Rakshak as the scalable model; WG-5 Post-Crash Care,
+  Policy Standards & State Implementation — the compensation/justice pipeline). Matching PDFs.
+  Built by `build_nrsb.py`; chair-profile research in `research/briefs/L-nrsb-chairs.md`.
+- `build_deck.py` / `build_nrsb.py` + `cfi_helpers.py` — the python-pptx build system.
+  Edit a script, run it, and the deck regenerates. `DECK_SPEC.md` is the slide-by-slide
+  narrative spec with the canonical numbers used.
+- `assets/` — official logo (blue + white), CFI's India coverage map, Dhoni announcement
+  creative, plus `assets/v3/` (extracted photos, headshots, approval letters, screenshots).
 
 ### `research/briefs/`
 Dense research briefs, one per theme — together they are the "complete context" corpus:
@@ -31,6 +38,7 @@ Dense research briefs, one per theme — together they are the "complete context
 | H-web-boa-press | Website content, Board of Advisors bios, verified press list |
 | I-storytelling | Narrative frameworks research behind the deck's arc |
 | K-team-profiles | Public-profile verification for every team member & trustee |
+| L-nrsb-chairs | NRSB Working Group chairperson research (for the WG-2 / WG-5 application decks) |
 
 ## Rebuilding the deck
 

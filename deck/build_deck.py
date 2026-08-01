@@ -975,7 +975,7 @@ for icn, t1, t2 in edu:
     text(s, M_L+Inches(0.6), ey2+Inches(0.26), Inches(7.2), Inches(0.5), t2, font=BODY, size=8.8, color=MUTED, ls=1.22)
     ey2 += Inches(0.78)
 try:
-    st_ = os.path.join(V3, "new", "rkf_p4.png")
+    st_ = os.path.join(V3, "new", "comp_image6.jpeg")
     ar = pic_ar(st_); nw_ = Inches(3.55)
     rect(s, Inches(9.06), Inches(2.51), nw_+Inches(0.08), Inches(3.55/ar)+Inches(0.08), WHITE, line=BORDER)
     pic(s, st_, Inches(9.1), Inches(2.55), w=nw_)
