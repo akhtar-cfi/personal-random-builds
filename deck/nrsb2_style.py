@@ -112,9 +112,10 @@ def icon_disc(s,name,x,y,d,tint,hexcolor,frac=0.52,sw=2.0):
 _HEXMAP={}
 def hexs(rgb): return f"#{rgb}"
 
-def crop_fill(path,w_in,h_in,tag=""):
-    """Pre-crop image to exactly fill w×h (inches) box; returns cached path."""
-    key=f"{os.path.basename(path)}_{w_in:.2f}x{h_in:.2f}{tag}".replace('/','_').replace(' ','_')
+def crop_fill(path,w_in,h_in,tag="",anchor=0.32):
+    """Pre-crop image to exactly fill w×h (inches) box; returns cached path.
+       anchor: 0=top .. 1=bottom (vertical position of crop window); horizontal always centered."""
+    key=f"{os.path.basename(path)}_{w_in:.2f}x{h_in:.2f}_{anchor:.2f}{tag}".replace('/','_').replace(' ','_')
     out=os.path.join(CACHE,key+".jpg")
     if not os.path.exists(out):
         im=ImageOps.exif_transpose(Image.open(path)).convert("RGB")
@@ -122,22 +123,63 @@ def crop_fill(path,w_in,h_in,tag=""):
         if ar>ar_t:
             nw=int(im.height*ar_t); x0=(im.width-nw)//2; im=im.crop((x0,0,x0+nw,im.height))
         else:
-            nh=int(im.width/ar_t); y0=max(0,int((im.height-nh)*0.32)); im=im.crop((0,y0,im.width,y0+nh))
+            nh=int(im.width/ar_t); y0=max(0,int((im.height-nh)*anchor)); im=im.crop((0,y0,im.width,y0+nh))
         im.thumbnail((1600,1600)); im.save(out,quality=87)
     return out
 
-def photo(s,path,x,y,w,h=None,border=True,caption=None,fill=False,cap_color=MUT):
+def _opt(path,maxpx=1500,q=85):
+    """Route heavy images through jpeg compression (drops alpha onto white)."""
+    try: sz=os.path.getsize(path)
+    except OSError: return path
+    im=Image.open(path)
+    if sz<=260_000 and max(im.size)<=maxpx: return path
+    key="opt_"+os.path.basename(path).rsplit('.',1)[0]+f"_{maxpx}.jpg"
+    out=os.path.join(CACHE,key)
+    if not os.path.exists(out):
+        im=ImageOps.exif_transpose(im)
+        if im.mode in ('RGBA','P','LA'):
+            im=im.convert('RGBA'); bg=Image.new('RGB',im.size,(255,255,255)); bg.paste(im,mask=im.split()[3]); im=bg
+        else: im=im.convert('RGB')
+        im.thumbnail((maxpx,maxpx)); im.save(out,quality=q)
+    return out
+
+def photo(s,path,x,y,w,h=None,border=True,caption=None,fill=False,cap_color=MUT,anchor=0.32):
     """Place photo. fill=True crops to exact w×h; else scales by width."""
     if fill and h is not None:
-        p=s.shapes.add_picture(crop_fill(path,w/914400,h/914400),x,y,width=w,height=h)
+        p=s.shapes.add_picture(crop_fill(path,w/914400,h/914400,anchor=anchor),x,y,width=w,height=h)
     else:
-        p=s.shapes.add_picture(path,x,y,width=w)
+        p=s.shapes.add_picture(_opt(path),x,y,width=w)
         if h is None: h=p.height
     if border:
         rect(s,x,y,w,h,fill=None,line=LINE,lw=1.0)
     if caption:
         text(s,x,y+h+Inches(0.05),w,Inches(0.25),caption,size=8.5,color=cap_color,ls=1.1)
     return p
+
+def photo_fit(s,path,x,y,maxw,maxh,border=True,caption=None,cap_color=MUT,align='left'):
+    """Contain-fit inside maxw×maxh; returns (w,h) placed. align: left|center within maxw."""
+    im=ImageOps.exif_transpose(Image.open(path))
+    ar=im.width/im.height; bw=maxw/914400; bh=maxh/914400
+    if bw/bh>ar: w_in=bh*ar; h_in=bh
+    else: w_in=bw; h_in=bw/ar
+    w=Emu(int(w_in*914400)); h=Emu(int(h_in*914400))
+    xx=x+Emu(int((maxw-w)/2)) if align=='center' else x
+    p=s.shapes.add_picture(_opt(path),xx,y,width=w,height=h)
+    if border: rect(s,xx,y,w,h,fill=None,line=LINE,lw=1.0)
+    if caption:
+        text(s,xx,y+h+Inches(0.05),w if w>Inches(1.8) else Inches(2.2),Inches(0.3),caption,size=8.5,color=cap_color,ls=1.12)
+    return w,h
+
+def logo_chip(s,path,x,y,w,h,pad=0.12):
+    """White card with logo contain-fit inside."""
+    rect(s,x,y,w,h,fill=PAPER,line=LINE,rounded=True,radius=0.10)
+    im=ImageOps.exif_transpose(Image.open(path))
+    ar=im.width/im.height
+    bw=(w/914400)-2*pad; bh=(h/914400)-2*pad
+    if bw/bh>ar: w_in=bh*ar; h_in=bh
+    else: w_in=bw; h_in=bw/ar
+    pw=Emu(int(w_in*914400)); ph_=Emu(int(h_in*914400))
+    s.shapes.add_picture(path,x+Emu(int((w-pw)/2)),y+Emu(int((h-ph_)/2)),width=pw,height=ph_)
 
 def chip(s,x,y,w,h,t,fill=MIST,color=INK,size=9.5,bold=True,line=None):
     rect(s,x,y,w,h,fill=fill,line=line,rounded=True,radius=0.5)
