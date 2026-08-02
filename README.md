@@ -11,12 +11,15 @@ plus the investor/grantee overview deck built from that context.
   ("Crashfree India — Systems work because we hold them accountable."), built to the CFI
   design system (Montserrat/Geist, brand indigo #4A35FF, 16:9).
 - Matching PDF export (fonts embedded — safest for sharing).
-- **`CFI_NRSB-WG2-Application_v1_2026-08-01.pptx`** (20 slides) and
-  **`CFI_NRSB-WG5-Application_v1_2026-08-01.pptx`** (19 slides) — application decks
-  accompanying CFI's one-pager EoIs to the National Road Safety Board Working Groups
-  (WG-2 Safe Roads, Speeds & VRUs — Rakshak as the scalable model; WG-5 Post-Crash Care,
-  Policy Standards & State Implementation — the compensation/justice pipeline). Matching PDFs.
-  Built by `build_nrsb.py`; chair-profile research in `research/briefs/L-nrsb-chairs.md`.
+- **`CFI_NRSB-WG2-Application_v2_2026-08-02.pptx`** and
+  **`CFI_NRSB-WG5-Application_v2_2026-08-02.pptx`** (23 slides each) — the current NRSB
+  Working Group application decks (letter-first structure, running agenda, all initiatives
+  covered, white/low-blue design). Built by `build_nrsb2.py` + `nrsb2_style.py`; slide-by-slide
+  spec and validated numbers in `NRSB_V2_SPEC.md`. v1 files kept for history; chair-profile
+  research in `research/briefs/L-nrsb-chairs.md`.
+- `assets/v5/` — the classified photo library (Road Safety Month campaigns, helpdesk camps,
+  ideathon, Dhoni studio shots, screenshots incl. the live SC-tracker capture) plus
+  `deckready/` crops used by the v2 decks. **Reuse these for future decks.**
 - `build_deck.py` / `build_nrsb.py` + `cfi_helpers.py` — the python-pptx build system.
   Edit a script, run it, and the deck regenerates. `DECK_SPEC.md` is the slide-by-slide
   narrative spec with the canonical numbers used.
