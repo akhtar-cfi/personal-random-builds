@@ -46,23 +46,15 @@ New Delhi
 
 **Subject:** Expression of Interest of Crashfree India — Working Group 5: Post-Crash Care, Policy Standards & State Implementation
 
-Respected Chairperson and Members of Working Group 5,
+Respected Sir,
 
 Crashfree India would like to submit its Expression of Interest for induction into Working Group 5 of the National Road Safety Board.
 
-Our interest in the Working Group comes from a simple institutional concern. India has developed laws, schemes and standards for emergency treatment, crash compensation, victim assistance and post-crash administration. Their value, however, depends on whether different institutions can function as one coherent system for the person affected by a crash.
+Our interest comes from a simple institutional concern. India has laws, schemes and standards for emergency treatment, crash compensation and victim assistance; their value depends on whether the institutions behind them function as one coherent system for the person affected by a crash. A victim or bereaved family meets hospitals, police, district administrations, insurers, legal-services institutions and tribunals, and the process becomes difficult to navigate when responsibilities, timelines and information are fragmented. Crashfree India works within this gap between legal entitlement and administrative delivery.
 
-A victim or bereaved family does not experience post-crash care as a single government programme. They encounter hospitals, police authorities, district administrations, enquiry officers, insurers, legal-services institutions and tribunals. Each may perform an important function, but the overall process can become difficult to navigate when responsibilities, timelines and information are fragmented.
+Our work began with legal and policy research and extensive interaction with victims, practitioners and public institutions, and moved steadily towards implementation: with district administrations, police and District Road Safety Committees, understanding how claims move, how files are reviewed, and why eligible families remain unable to access statutory relief. That experience has shaped our view of reform. It requires a system in which each institution's responsibilities are visible, information moves reliably, the claimant knows the next step, and authorities can see where cases are delayed.
 
-Crashfree India has chosen to work within this gap between legal entitlement and administrative delivery.
-
-Our engagement with crash compensation began through legal and policy research, extensive interaction with victims and families, and consultations with practitioners and public institutions. That work increasingly led us towards implementation. We have engaged with district administrations, police authorities and District Road Safety Committees to understand how claims move through the system, how files are reviewed and why eligible families may remain unable to access statutory relief.
-
-This experience has shaped our larger understanding of post-crash reform. The challenge cannot be addressed only by amending a provision, issuing a circular or creating another digital form. It requires a system in which the responsibilities of each institution are visible, information moves reliably, the claimant understands the next step and public authorities can identify where cases are getting delayed.
-
-Our ongoing engagement with the Rajasthan Lead Agency reflects this approach. Crashfree India is supporting the design of a digital case-management portal for the Hit-and-Run Compensation Scheme. The proposed platform is intended to make the statutory process easier to access and administer through guided filing, clearer document pathways, stage-wise visibility and administrative dashboards. It is being conceptualised as an enabling layer around the existing public system, with human authorities retaining responsibility for every substantive decision.
-
-For us, the portal is part of a broader institutional idea. Technology should help reveal bottlenecks, reduce avoidable errors, improve communication with families and create evidence for administrative reform. It should not reproduce the same fragmented process on a screen.
+Our engagement with the Rajasthan Lead Agency reflects this approach. We are supporting the design of a digital case-management portal for the Hit-and-Run Compensation Scheme: guided filing, clearer document pathways, stage-wise visibility and administrative dashboards, built as an enabling layer around the existing public system, with human authorities retaining every substantive decision. Technology, for us, should reveal bottlenecks, reduce avoidable errors and improve communication with families. It should not reproduce the same fragmented process on a screen.
 
 A brief picture of the organisation and the evidence base, in numbers:
 
