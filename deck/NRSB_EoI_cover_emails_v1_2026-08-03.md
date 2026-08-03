@@ -1,6 +1,6 @@
 # NRSB Expression of Interest — cover emails (v1, 3 Aug 2026)
 
-To: chairmannrsb@zohomail.in
+To: chairmannrsb@zohomail.in (WG-2, WG-5) · kcsharma.rth@gov.in (WG-3 Chair, Shri K C Sharma; Co-Chair Shri Gaurav Upadhyay)
 Attachments per email: the one-page EoI + the matching application deck (PDF).
 
 ---
@@ -71,6 +71,41 @@ This diversity matters because post-crash care is not only a legal question. It 
 We see the Working Group as an opportunity to contribute to a larger national architecture for post-crash care. Such an architecture should connect emergency response, hospital treatment, documentation, compensation, rehabilitation and grievance resolution. It should offer national coherence while recognising that States and districts may follow different administrative arrangements.
 
 Our one-page Expression of Interest and a supporting note on the organisation are attached. Crashfree India would be grateful for the opportunity to contribute its research, institutional engagements, technology work and victim-facing perspective to this process. We hope to support the NRSB in building a post-crash system that is easier to navigate, clearer in responsibility and more responsive to the dignity and needs of victims and their families.
+
+Respectfully,
+
+Akhtar Hussain
+Mission Lead, Crashfree India
+akhtar@crashfreeindia.org · crashfreeindia.org
+New Delhi
+
+---
+
+## Email 3 — Working Group 3
+
+**Subject:** Expression of Interest of Crashfree India — Working Group 3: Safe Vehicles, Commercial Transport and Future Mobility
+
+Respected Sir,
+
+Crashfree India would like to submit its Expression of Interest for induction into Working Group 3 of the National Road Safety Board.
+
+Two-wheeler riders are the largest and fastest-growing category of road users at risk, and commercial and gig work now concentrates that exposure: entire working days on the road, on vehicles and licences that see comparatively little scrutiny. Policy on platform work has so far been shaped mainly as a labour and welfare question. Crashfree India works on its road safety dimension, and this Working Group's mandate over vehicles, fleets and aggregators is where that conversation belongs.
+
+We began with research and have moved steadily closer to the vehicle itself. 'When Risks Become Routine', our study of gig-rider road risk, was published in February 2026, and a 300-rider study is now in the field to quantify what it surfaced. Expert sessions on two-wheeler ADAS and bus fire safety have brought veterans of ARAI, the CMVR Technical Standing Committee and CIRT to our table, and an early review of ride-hailing vehicles showed where challan verification breaks down in practice. SATARK, our vehicle-screening platform with police in three cities, shows the compliance technology working at scale.
+
+A brief picture of the organisation and the work, in numbers:
+
+- Registered as the Vision Zero Trust and co-founded with the Indian Road Safety Council, with a three-year, US$3 million commitment from Cars24, which also gives us an industry vantage point into vehicle markets, fleet operations and used-vehicle certification. MS Dhoni carries this message to the country as our Goodwill Ambassador.
+- 'When Risks Become Routine' (February 2026): 40 pages and 87 references on gig-rider road risk, from incentive design and helmet compliance to the e-bike regulatory blind spot; fieldwork included a full nine-hour rider shift shadowed on video.
+- A 300-rider study now in the field, quantifying how often riders face near-misses and crashes, which risk factors matter most, and what rider profiles exist, so interventions can be targeted rather than generic.
+- Expert sessions on vehicle standards: two-wheeler ADAS with Balraj Bhanot (former Chairman, CMVR-TSC; former Director, ARAI) and bus fire safety with Dattatraya Saste (formerly MoRTH; Bus Code Convener) and CIRT's technical secretariat; these relationships remain active and available to the Group.
+- An early review of ride-hailing vehicles across four platforms: 56.8% carried more than three recorded challans, and one carried over forty, evidence that points to verification and enforcement, not to new rules.
+- SATARK, our AI vehicle-screening platform built with police: over 3,00,000 vehicles screened in Jaipur, Bengaluru and Gurugram.
+- Consultations spanning the Ministry of Labour and Employment, the V.V. Giri National Labour Institute, former traffic-police leadership of Delhi, Gurugram and Bengaluru, platform operations veterans, and Fairwork India researchers.
+
+We see the Working Group as the natural place for India's safety-specific conversation on riders, fleets and aggregators: one table where platforms, police, insurers, regulators and researchers look at the same evidence. Our research, our standards bench and our technology are available to the Board in whichever form is most useful.
+
+Our one-page Expression of Interest and a supporting note on the organisation are attached. We would be grateful for the opportunity to contribute.
 
 Respectfully,
 
