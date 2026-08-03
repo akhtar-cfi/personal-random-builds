@@ -11,10 +11,10 @@ plus the investor/grantee overview deck built from that context.
   ("Crashfree India — Systems work because we hold them accountable."), built to the CFI
   design system (Montserrat/Geist, brand indigo #4A35FF, 16:9).
 - Matching PDF export (fonts embedded — safest for sharing).
-- **`CFI_NRSB-WG2-Application_v5_2026-08-02.pptx`** and
-  **`CFI_NRSB-WG5-Application_v5_2026-08-02.pptx`** (28 and 26 slides) — the current NRSB
+- **`CFI_NRSB-WG2-Application_v7_2026-08-03.pptx`** and
+  **`CFI_NRSB-WG5-Application_v7_2026-08-03.pptx`** (28 and 26 slides) — the current NRSB
   Working Group application decks (letter-first structure, running agenda, all initiatives
-  covered, white/low-blue design). Built by `build_nrsb5.py` + `nrsb2_style.py`; slide-by-slide
+  covered, white/low-blue design). Built by `build_nrsb7.py` + `nrsb2_style.py`; slide-by-slide
   spec and validated numbers in `NRSB_V2_SPEC.md`. Earlier versions kept for history; chair-profile
   research in `research/briefs/L-nrsb-chairs.md`.
 - `assets/v5/` — the classified photo library (Road Safety Month campaigns, helpdesk camps,
