@@ -6,7 +6,7 @@ import os
 import nrsb2_style as ST
 import build_nrsb3 as B
 import build_overview as OV
-from build_overview import rakshak_ov, research_ov, close_ov, gig_ov
+from build_overview import rakshak_ov, research_ov, close_ov
 from nrsb2_style import *
 from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
@@ -14,6 +14,8 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 I = Inches
 TOTAL = 16
 RMI = os.path.join(SP, "assets/rmi")
+PRESS = os.path.join(SP, "assets/press")
+def ap(n): return os.path.join(PRESS, n)
 
 def m_footer(s, wg, idx, total):
     hline(s, ML, I(7.06), CW)
@@ -97,6 +99,58 @@ def about_m(idx):
     m_footer(s, None, idx, TOTAL)
     return s
 
+# ---------------------------------------------------------------- 04 PORTFOLIO (focus areas)
+def portfolio_m(idx):
+    s = slide()
+    header(s, "02 · What we have built", [("Six lines of work, ", False), ("one connected system", True)],
+           lead="Audits create data · data supports policy · policy guides the field. Six focus areas, one system.",
+           sect=(2, "WHAT WE HAVE BUILT"))
+    tiles = [("Project Rakshak", "Student-led road audits, fixed with authorities", "31 sites · 7 fixes fully built", a5("implementation_work.jpg"), 0.30),
+             ("SATARK enforcement", "AI support that helps police find high-risk vehicles", "3,00,000+ vehicles screened", a5("satark_billboard.jpg"), 0.42),
+             ("Crash compensation", "A policy implementation gap we close with tech, embedded in districts and DRSCs", "Rajasthan portal · 4 DRSC seats", a5("ph_helpdesk_desk.jpg"), 0.25),
+             ("Open public data", "Four self-updating data platforms, free to use", "36 states & 50 cities covered", a5("sctracker.png"), 0.05),
+             ("Gig rider safety", "Research-led: published brief, 300-rider study, platform engagement", "1 in 2 of 431 riders had crashed", a5("ph_gig_riders.jpg"), 0.35),
+             ("School Safety Index", "A public 0–100 score for the road outside every school gate", "Delhi & Jaipur · 5,386 schools mapped", os.path.join(RMI, "slide_ssi_index.png"), 0.0)]
+    tw = I(3.95); th = I(2.32); gx = I(0.12); gy = I(0.16)
+    for i, (t, d, st, img, anc) in enumerate(tiles):
+        r, c = divmod(i, 3)
+        x = ML + c*(tw+gx); y = I(2.12) + r*(th+gy)
+        rect(s, x, y, tw, th, fill=PAPER, line=LINE, rounded=True, radius=0.06)
+        photo(s, img, x, y, tw, I(1.28), fill=True, border=False, anchor=anc)
+        rect(s, x, y, tw, I(1.28), fill=None, line=LINE, lw=1.0)
+        text(s, x+I(0.14), y+I(1.36), tw-I(0.28), I(0.3), t, font=HEAD, size=11.5, bold=True, color=INK, ls=1.0)
+        text(s, x+I(0.14), y+I(1.62), tw-I(0.28), I(0.35), d, size=9, color=MUT, ls=1.12)
+        text(s, x+I(0.14), y+I(2.02), tw-I(0.28), I(0.26), st, font=HEAD, size=9, bold=True, color=BRAND, ls=1.0)
+    m_footer(s, None, idx, TOTAL)
+    return s
+
+# ---------------------------------------------------------------- 10 GIG RIDERS (with report snippet)
+def gig_m(idx):
+    s = slide()
+    header(s, "02 · What we have built, vulnerable road users",
+           [("The fastest-growing risk on Indian roads ", False), ("rides a two-wheeler", True)],
+           lead="Two-wheeler riders carry the largest share of road deaths, and gig and delivery work concentrates that exposure. We study it, and we work it.",
+           sect=(2, "WHAT WE HAVE BUILT"))
+    tiles = [("~45%", "of India's crash fatalities are two-wheeler users, rising year on year"),
+             ("23.5 M", "gig and platform workers projected by 2029-30 (NITI Aayog)"),
+             ("1 in 2", "delivery riders in a 431-rider Mumbai crash study had already crashed")]
+    tw = I(2.6)
+    for j, (v, l) in enumerate(tiles):
+        x = ML+j*(tw+I(0.12)); y = I(2.35)
+        rect(s, x, y, tw, I(1.5), fill=MIST, rounded=True, radius=0.08)
+        text(s, x+I(0.16), y+I(0.12), tw-I(0.32), I(0.45), v, font=HEAD, size=20, bold=True, color=BRAND)
+        text(s, x+I(0.16), y+I(0.62), tw-I(0.32), I(0.8), l, size=8.5, color=MUT, ls=1.2)
+    rows = [("file-search", "A published study", "'When Risks Become Routine' (Feb 2026): 40 pages, 87 references, from incentive design and helmet compliance to the e-bike regulatory blind spot.", AM_T, "#E58900"),
+            ("gauge", "A 300-rider study, now in the field", "Quantifying how often riders face near-misses, which risk factors matter most, and what rider profiles exist, so interventions can be targeted.", TE_T, "#0E8A8A"),
+            ("bike", "Field, not only desk", "Fieldwork included shadowing a delivery rider through a full nine-hour shift, documented on video.", BR_T, "#4A35FF")]
+    y = I(4.15)
+    for j, (ic, t, d, tint, col) in enumerate(rows):
+        irow(s, ML, y+j*I(0.82), I(7.7), ic, t, d, tint, col, tsize=11, dsize=9)
+    photo_fit(s, ap("cov_gig.png"), I(8.95), I(2.15), I(3.75), I(4.15), align='center',
+              caption="'When Risks Become Routine' · Crashfree India research brief, February 2026.")
+    m_footer(s, None, idx, TOTAL)
+    return s
+
 # ---------------------------------------------------------------- 11 SCHOOL SAFETY INDEX
 def ssi(idx):
     s = slide()
@@ -132,39 +186,47 @@ def media(idx):
            lead="National newsrooms cite our research, cover our deployments, and quote our researchers by name.",
            sect=(2, "WHAT WE HAVE BUILT"))
     cards = [
-        ("DECCAN HERALD  ·  MARCH 2026",
-         "'Road crash victims struggle as ₹80,000 crore compensation lies unpaid'",
-         "National coverage of our 'Justice Unserved' brief; the paper hosts the full report for its readers."),
-        ("INDIASPEND  ·  THE WIRE  ·  MAY 2026",
-         "'For India's road accident survivors, legal compensation is elusive'",
-         "Quotes our research lead Kesar Kanjhlia on where claims stall; republished by The Wire."),
-        ("INDIASPEND  ·  MARCH 2026",
-         "'One crash, years of crisis: the hidden scale of serious road injuries'",
-         "Cites our gig-rider research; quotes Aastha Shreeharsh on the risk data India does not yet collect."),
-        ("DECCAN HERALD  ·  BENGALURU",
-         "'Big Boss' watching: billboard at Trinity Circle shows violations in real time",
-         "Our live challan billboard with Bengaluru Traffic Police, built with Cars24."),
-        ("THE LOGICAL INDIAN  &  OTHERS",
-         "'India's first AI-powered billboard to display pending challans in real time'",
-         "The same deployment, also covered by Siasat, CarToq, Media Infoline and Daily Jagran."),
-        ("FROM OUR POLICY DESK",
+        ("strip_dh_ju.jpg", "DECCAN HERALD  ·  MARCH 2026",
+         "Road crash victims struggle as ₹80,000 crore compensation lies unpaid",
+         "National coverage of our 'Justice Unserved' brief; DH hosts the full report for readers."),
+        ("strip_wire_survivors.jpg", "THE WIRE  ·  INDIASPEND  ·  MAY 2026",
+         "For India's road accident survivors, legal compensation is elusive",
+         "Quotes our research lead Kesar Kanjhlia on where claims stall."),
+        ("strip_indiaspend_crash.jpg", "INDIASPEND  ·  ISIGNAL  ·  MARCH 2026",
+         "One crash, years of crisis: the hidden scale of serious road injuries",
+         "Cites our gig-rider research; quotes Aastha Shreeharsh on missing risk data."),
+        ("strip_dh_billboard.jpg", "DECCAN HERALD  ·  SEPT 2025",
+         "Big boss watching! Billboard at Trinity Circle displays violations in real time",
+         "Our live challan billboard with Bengaluru Traffic Police and Cars24."),
+        ("strip_tli_billboard.jpg", "THE LOGICAL INDIAN  ·  SEPT 2025",
+         "India's first AI-powered billboard to display pending challans in real time",
+         "Also covered by Siasat, CarToq, Media Infoline and Daily Jagran."),
+        (None, "FROM OUR POLICY DESK",
          "A steady line of published argument",
-         "Articles and explainers by Shubham Kumar and our policy team, from claim pipelines to enforcement design, published through Crashfree India."),
+         "Articles and explainers by Shubham Kumar and our policy team, from claim pipelines to enforcement design."),
     ]
-    cw, chh = I(3.95), I(1.98)
-    gx, gy = I(0.135), I(0.16)
-    y0 = I(2.30)
-    for k, (outlet, head, desc) in enumerate(cards):
+    cw, chh = I(3.95), I(2.14)
+    gx, gy = I(0.135), I(0.14)
+    y0 = I(2.26)
+    for k, (img, outlet, head, desc) in enumerate(cards):
         r, c = divmod(k, 3)
         x = ML + c*(cw+gx); y = y0 + r*(chh+gy)
-        rect(s, x, y, cw, chh, fill=PAPER, line=LINE, lw=1.0, rounded=True, radius=0.07)
-        text(s, x+I(0.2), y+I(0.14), cw-I(0.4), I(0.24), outlet, font=HEAD, size=7.5, bold=True, color=BRAND, tracking=1.2)
-        text(s, x+I(0.2), y+I(0.42), cw-I(0.4), I(0.85), head, font=HEAD, size=10, bold=True, color=INK, ls=1.15)
-        text(s, x+I(0.2), y+I(1.32), cw-I(0.4), I(0.58), desc, size=8, color=MUT, ls=1.2)
-    text(s, ML, I(6.62), CW, I(0.3),
+        rect(s, x, y, cw, chh, fill=PAPER, line=LINE, lw=1.0, rounded=True, radius=0.06)
+        if img:
+            photo(s, ap(img), x, y, cw, I(0.86), fill=True, border=False, anchor=0.0)
+            rect(s, x, y, cw, I(0.86), fill=None, line=LINE, lw=1.0)
+            text(s, x+I(0.18), y+I(0.98), cw-I(0.36), I(0.22), outlet, font=HEAD, size=7.5, bold=True, color=BRAND, tracking=1.2)
+            text(s, x+I(0.18), y+I(1.22), cw-I(0.36), I(0.5), head, font=HEAD, size=9.5, bold=True, color=INK, ls=1.12)
+            text(s, x+I(0.18), y+I(1.76), cw-I(0.36), I(0.34), desc, size=7.5, color=MUT, ls=1.15)
+        else:
+            rect(s, x, y, cw, chh, fill=BR_T, rounded=True, radius=0.06)
+            text(s, x+I(0.2), y+I(0.2), cw-I(0.4), I(0.22), outlet, font=HEAD, size=7.5, bold=True, color=BRAND, tracking=1.2)
+            text(s, x+I(0.2), y+I(0.5), cw-I(0.4), I(0.6), head, font=HEAD, size=11.5, bold=True, color=INK, ls=1.15)
+            text(s, x+I(0.2), y+I(1.14), cw-I(0.4), I(0.85), desc, size=8.5, color=MUT, ls=1.25)
+    text(s, ML, I(6.72), CW, I(0.3),
          [("Also in the record:  ", {'bold': True, 'color': INK}),
           ("'Justice Unserved' launched at IIT Delhi and presented to MoRTH · launch coverage in Team-BHP, Adgully and The CSR Universe.", {'color': MUT})],
-         size=9, ls=1.2)
+         size=8.5, ls=1.2)
     m_footer(s, None, idx, TOTAL)
     return s
 
@@ -173,7 +235,7 @@ def guidance(idx):
     s = slide()
     header(s, "04 · The year ahead",
            [("Where we are going, and ", False), ("where your counsel would help", True)],
-           lead="Year 2 moves from programmes to institutions. These are the goals, and the questions we would bring to a mentor.",
+           lead="Year 2 moves from programmes to institutions. These are the goals, and what we hope to learn from your experience.",
            sect=(4, "THE YEAR AHEAD"))
     colw = I(5.85)
     text(s, ML, I(2.02), colw, I(0.26), "THE YEAR AHEAD", font=HEAD, size=9, bold=True, color=MUT, tracking=1.8)
@@ -189,12 +251,12 @@ def guidance(idx):
         irow(s, ML, y+i*I(0.86), colw, ic, t, d, BR_T, "#4A35FF")
     x2 = ML+colw+I(0.42)
     w2 = SW-MR-x2
-    text(s, x2, I(2.02), w2, I(0.26), "WHERE GUIDANCE WOULD HELP", font=HEAD, size=9, bold=True, color=MUT, tracking=1.8)
+    text(s, x2, I(2.02), w2, I(0.26), "WHERE WE SEEK YOUR GUIDANCE", font=HEAD, size=9, bold=True, color=MUT, tracking=1.8)
     rows_r = [
-        ("building-2", "Institution building", "Turning young programmes into bodies with standards, governance and a life beyond the founding team."),
-        ("landmark", "Government at scale", "Deepening state partnerships while keeping our independence and our habit of publishing everything."),
+        ("building-2", "How you built institutions", "Organisations that outlast their founders: the standards, governance and culture that takes."),
+        ("zap", "How you solved the hardest problems", "The judgement earned on ambiguous, high-stakes problems. We would bring you ours early."),
+        ("landmark", "Working with government at scale", "Partnerships that deepen while we keep our independence and publish everything."),
         ("users", "People and leadership", "Growing a young team into leaders, and drawing senior operators to a nonprofit mission."),
-        ("banknote", "Sustainability", "Building funding lines beyond the founding commitment, without distorting what we work on."),
         ("target", "Focus", "What to stop, what to scale, and when. The discipline of a small organisation with a national mission."),
     ]
     for i, (ic, t, d) in enumerate(rows_r):
@@ -207,17 +269,17 @@ if __name__ == "__main__":
     cover_m()                      # 01
     note(2)                        # 02
     about_m(3)                     # 03
-    B.portfolio(4, TOTAL, None)    # 04
+    portfolio_m(4)                 # 04
     rakshak_ov(5)                  # 05
     B.satark(6, TOTAL, None)       # 06
     B.opendata(7, TOTAL, None)     # 07
     B.victim_suite(8, TOTAL, None) # 08
     research_ov(9)                 # 09
-    gig_ov(10)                     # 10
+    gig_m(10)                      # 10
     ssi(11)                        # 11
     media(12)                      # 12
     B.youth(13, TOTAL, None)       # 13
     B.team(14, TOTAL, None)        # 14
     guidance(15)                   # 15
     close_ov()                     # 16
-    save(os.path.join(BUILD, "CFI_Mentor_v2.pptx"))
+    save(os.path.join(BUILD, "CFI_Mentor_v3.pptx"))
