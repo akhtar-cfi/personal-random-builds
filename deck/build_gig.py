@@ -14,6 +14,14 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                    "CFI_GigRiderSafety-Stakeholders_v2_2026-09-09.pptx")
 
+# nrsb2_style expects the logos in deck/; copy them from deck/assets/ if missing
+# so a clean checkout can rebuild (the copies are git-ignored build artifacts).
+import shutil
+for _lg in ("logo_blue.png", "logo_white.png"):
+    _dst = os.path.join(BUILD, _lg)
+    if not os.path.exists(_dst):
+        shutil.copy(os.path.join(SP, "assets", _lg), _dst)
+
 INKMUT = RGBColor(0x45,0x48,0x55)   # slightly darker muted for small body
 LAV_DK = RGBColor(0x6A,0x55,0xFF)   # hairline/glyph on brand-blue backgrounds
 

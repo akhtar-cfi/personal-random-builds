@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node deps for deck icon tooling (lucide-static); package.json manifest is tracked
+deck/node_modules/
+
+# Deck build caches and runtime logo copies (regenerated from deck/assets/ by the build scripts)
+deck/icon_cache/
+deck/crop_cache/
+deck/logo_blue.png
+deck/logo_white.png
