@@ -71,6 +71,7 @@ trick: it de-risks safeguarding and budget while still creating momentum now.
 
 ### Stage 1 — Engage & onboard (relationship before money; safeguarding-light)
 The fastest, lowest-risk value. Do this **now** with the confirmed names.
+- **Start with CFI's own NextMile 2025 finalists** (Safer Miles Initiative et al.) — already road-safety-committed and CFI-warm; pull names from internal records. Warmest possible first cohort.
 - **Warm, specific outreach** ("we saw *Roadyz* / *Vision Guard* — here's a concrete offer"). Template in Part E.
 - **Low first ask:** invite to the Rakshak/NextMile forum, an expert masterclass, and a **Young
   Builders community** (WhatsApp/Slack). No grant, no contract — so under-18s are easy here.
@@ -117,27 +118,86 @@ CFI provides, per builder:
 
 ## PART C — THE ROSTER (real, sourced young road-safety builders)
 
-> _Expanding now via live research (net-new India school + college + campaigner names, plus a fresh
-> attempt at the "seatbelt kid" lead). Confirmed anchors below are ready to approach today; the full
-> expanded table lands in this section on the next commit._
+Consolidated from 5 research streams. Confidence tags apply to the person/project's existence in a
+credible source, **not** to whether the device shipped (most are prototypes — the whole reason CFI's
+adoption bridge matters). **Ages are as-reported and advance over time — several "2018–19" builders
+are now college-age/graduates; verify current age & activity before outreach, especially for anything
+involving minors.**
 
-**Confirmed anchors (approach first) — from brief M:**
-| Name | ~Age / place | What they built | Engagement hook | Conf. |
+### C1 — Confirmed anchors to approach first (best CFI fit)
+| Name | ~Age / place | What they built | Why they're a strong first contact | Conf. |
 |---|---|---|---|---|
-| **Surya Uthkarsha** | 14, Bengaluru | The Marg Initiative; *Roadyz* game; *RASTHE* footpath-reporting | Already runs a mini-version of this; ideal flagship/anchor member | CONFIRMED |
-| **Vanisha Kheterpal** | 16, Jaipur | *SurakshaAI* → *Vision Guard* (AI blind-spot/curve collision prevention) | Jaipur = a CFI anchor district; possible DRSC pilot fit | CONFIRMED |
-| **Rupesh Kumar** | 16, Bokaro (JH) | *Rakshak* — AI crash-detection/alert app; INSPIRE-MANAK 2023 | Post-crash response fits CFI's Golden-Hour/ERSS work; name already "Rakshak" | CONFIRMED |
-| **Perkari Sri Chandana** | undergrad, Telangana | Wearable airbag jacket for 2-wheeler riders; MSME Hackathon ₹12L | VRU/2-wheeler focus = CFI's core risk group | CONFIRMED |
-| **Pradyumna Kumar Pal & Rahul Kumar** | Class 7 & 9 (OD/BR) | Bus hand/head-out-of-window alert; on NIF list | Juniors-tier recognition candidates | CONFIRMED |
+| **Surya Uthkarsha** | 14, Bengaluru | The Marg Initiative; *Roadyz* game; *RASTHE* footpath-reporting | Already runs a mini-version of this — ideal flagship/anchor | CONFIRMED |
+| **Rohit Raj (HelmTech)** | ~19–20, Jehanabad, Bihar | Smart helmet: alcohol-detect + auto-stop + crash-GPS app; **already a startup**, Pitch Karo India 2026 finalist, ₹10L Bihar startup grant | Furthest along (a venture, not just a prototype) → ready for a *pilot/incubation* offer | CONFIRMED |
+| **Vanisha Kheterpal** | 16, Jaipur | *SurakshaAI* → *Vision Guard* (AI blind-spot/curve collision alerts) | **Jaipur = a CFI anchor district** → direct DRSC/pilot fit | CONFIRMED |
+| **Perkari Sri Chandana** | undergrad, Telangana | Wearable airbag jacket for 2-wheeler riders; MSME Hackathon ₹12L | VRU/2-wheeler = CFI's core risk group | CONFIRMED |
+| **Rupesh Kumar** | 16, Bokaro (JH) | *Rakshak* — AI crash-detection/alert app; INSPIRE-MANAK 2023 | Post-crash/Golden-Hour fit; name already "Rakshak" | CONFIRMED |
+| **Smart Street team** — Arushi Ganguly, Vedanshi Mehta, Aarav Mohanraj | Grade 9 (~14), Mumbai | Piezoelectric road tiles + hydraulic pedestrian portal + stray-pedestrian alarms; **vivo Ignite 2023 National Winners** | Award-winning team, full pedestrian-safety concept; strong showcase | CONFIRMED |
 
-_Weak/lead-only (verify age/year before outreach): TN helmet trio (Pooja/Srinath/Jayakumar); Tanmay
-Das (Odisha, anti-sleep glasses); Harpreet Kaur (safer school bus); Rohit Pataskar (helmet interlock)._
+### C2 — Confirmed net-new India builders
+| Name | ~Age / place | What they built | Year / recognition | Conf. |
+|---|---|---|---|---|
+| **Siddhant Attavar & Shreyas Viswanath** | Grade 9 in '19 (now ~20–21), Bengaluru | *DriveSafe* app — phone-sensor rash-driving detection | Toyota Road-Safety Hackathon 2019, 1st | CONFIRMED |
+| **Ravi Chaudhary** | 16, Ratlam, MP | Helmet-linked ignition lock (bike won't start without paired helmet) | 2023 | CONFIRMED |
+| **Sindhu & Yashaswini** | school, Shanthipuram, AP (govt school) | Ultrasonic warning for dupatta/saree entanglement in 2-wheeler rear wheel | APCOST Avishkar 2025 — *strong women's-safety angle* | CONFIRMED (first names only) |
+| **Indore anti-sleep team** — Abhigyan Purohit, Anirudh Sharma, Darshan Jain, Abhishek Patidar, Akshay Nayak | engg students, Indore | Goggle eye-sensor anti-sleep alarm + auto-decelerate | 2023 | CONFIRMED |
+| **Harpreet Kaur** | Class 8 (~13), Sirsa, Haryana | Smart school-bus signal system (moves only when all boarded; obeys signal) | 51st National Children's Science Exhibition (NCERT) 2024 | CONFIRMED |
+| **Supriya Sharma & Choden Tamang** | Class 9 in '18 (now ~22), Gangtok, Sikkim | Sensor system to prevent vehicles losing balance on hill roads (ATL) | IISF SAATHI 2018 top-5; AIM feature | CONFIRMED (dated) |
+| **Khilesh Devagan** | Class 11 in '18 (now ~24), Durg, Chhattisgarh | Smart-helmet ignition interlock | 2018 | CONFIRMED (dated) |
+| **Pradyumna Kumar Pal & Rahul Kumar** | Class 7 & 9, OD/BR | Bus hand/head-out-of-window alert | NIF/IGNITE list | CONFIRMED |
+
+### C2b — Founders, startups & CFI's own warmest leads
+> **Start with your own NextMile finalists.** The strongest engagement pool may already be in CFI's
+> files: the **NextMile 2025 Ideathon** finalist teams self-selected into road safety and are already
+> CFI-warm — **Safer Miles Initiative** (*SurakshaSetu*, blockchain crash-compensation / 72-hr
+> payouts; runner-up), plus **"Strategists"** (winner, gig-rider framework) and **"A²"** (3rd,
+> *SafeMile Protocol*). Members' names aren't public — **recover them from CFI's NextMile
+> registration/finalist records** (an internal lookup, not a web search). Warmest possible first cohort.
+
+| Founder / team | ~Age / place | What they built | Note | Conf. |
+|---|---|---|---|---|
+| **Kshemin Labs** — Pradeep Varma, Gyan Sai, Rohit K | founded '19 (now ~26–29), Visakhapatnam | AI fleet driver-drowsiness / microsleep detection (camera + alarm + fleet app) | Past the youth band now → engage as **technical partner/mentor**, not cohort member | CONFIRMED |
+| **Farheena Memon, Priti Sonawane, Shruti Sunadalli, Siddhi Thorat** | UG, Nashik (GGSCOE&RC) | IoT over-speed alert for accident-prone zones (risk display + buzzer) | Recent (2025); engage via the college | CONFIRMED |
+| **Dhruv Vekariya, Kevin Pius, Tamal Dey, Bikram Nath** | UG, Bengaluru (MVJ CE) | *Black Box* — low-cost crash-detection + auto-alert | ~2021 — likely graduated; verify status | CONFIRMED (dated) |
+
+### C3 — Net-new global builders (narrative color / benchmarking, not for the India program)
+| Name | ~Age / country | What they built | Recognition | Conf. |
+|---|---|---|---|---|
+| **Katharine Wu** | 14, USA | *Driver's Companion* — EEG headset drowsiness alert | 3M Young Scientist 2014 finalist | CONFIRMED |
+| **Kaiji Fu** | ~17, USA | *General Safety* — school-bus stop-arm violation camera app | Congressional App Challenge 2023 winner | CONFIRMED |
+| **Yunha Lee** | HS, S. Korea | AI-powered pedestrian-safety traffic system | Regeneron ISEF 2025 special award | CONFIRMED |
+| **Pranavh J. Vallabhaneni** | 15, USA | *Baby Saver* hot-car child alert | Invention Convention US Nationals 2020, 1st | CONFIRMED |
+| **Kelly Ann Greene** | 18, USA | *Baby Saver* hot-car child alert | Invention Convention US Nationals 2021 award | CONFIRMED |
+
+### C4 — Weak / tangential / leads (verify before use)
+- **Bengaluru Toyota-Hackathon 2019 runners-up** — Nobel Jaison & Jaanavi H; Dennis Philip & Tarun Narasimhan (project detail thin) — WEAK.
+- **Aanay Dwivedi** — plastic-waste pothole repair; INSPIRE-MANAK 2024 2nd national — CONFIRMED project but **road-quality, not a safety device** (tangential).
+- **TN helmet trio** (Pooja/Srinath/Jayakumar); **Tanmay Das** (Odisha anti-sleep glasses); **Rohit Pataskar** (helmet interlock) — WEAK (single local outlet).
+- **MS Ramaiah Inst. students** — radar collision-distance device, TI Innovation Challenge (names not surfaced) — lead.
+- **Pankaj Tanwar** (Bengaluru; AI helmet that auto-detects violations, viral Jan 2026) — WEAK: explicitly a hobby project, age unconfirmed; tangential (surveillance gadget).
+- **Salman Khan** (Mumbai; junior doctor; GYCRS Youth Leadership Board) — CONFIRMED but ~28 and road safety is one of several causes → a **network node / medical-partner**, not a cohort member.
+- **Hackathon team leads (names via organizers, not web):** IIT Madras BIMSTEC AI Road-Safety Hackathon 2026 (teams *Cipher, Civics Forge, Tejas*); IIT Madras "Hackcidents" 2023 (Rungta CE Bhilai; MM Engg Mullana; an IIT-M team). CoERS/IIT Madras (already a CFI consortium contact) can connect named leads.
+- **Ruled out — do not re-chase:** Raghvendra Kumar ("Helmet Man", a real campaigner but not 18–25); Chethan Gowda (Ashoka youth — his work is blood donation, not road safety); Piyush Tewari (SaveLIFE — road safety but not youth; already a CFI board name).
+
+### C5 — Honest read on the pool + a discovery implication
+- **The "seatbelt kid" does not exist in accessible sources** — two independent searches found **no credible named *Indian* seatbelt inventor.** The only real named teen seatbelt inventor is Emirati (Khalid Al Shammari). Treat that slot as unfilled unless you have a private lead.
+- **The verifiable named pool is genuinely thin** beyond ~15–20 people — and skewed to *helmet interlocks, drowsiness alarms, and hot-car alerts* (many kids reinvent the same 2–3 devices). India's youth-innovation portals (INSPIRE-MANAK, NIF/IGNITE, ATL, APCOST, NCERT NCSE) index *thousands* of projects but rarely expose named road-safety ones to web search.
+- **Implication for Stage 0 (Discovery):** the highest-yield sourcing is **partnering with the award bodies directly** (NIF/IGNITE, INSPIRE-MANAK state cells, APCOST, Atal Innovation Mission, NCERT) to get named road-safety project lists — not web scraping. This *reinforces* the "feeders, not a cold call" design in Part B. It also means: **plan for a curated cohort of ~15–25 known builders, not a mass platform** — the pool size fits a *track*, not an *org* (exactly the pressure-test's conclusion).
+
+**Roster source pointers (verify before external use):** Surya — Better India / Logical Indian /
+Startuppedia; Rohit Raj & Sindhu/Yashaswini & Ravi Chaudhary & Indore team & Harpreet Kaur —
+ETV Bharat / Free Press Journal / The Print / Tribune; Smart Street — vivo Ignite newsroom /
+Campusutra; DriveSafe — Toyota Bharat / Curriculum Magazine; Supriya & Choden — aim.gov.in;
+Khilesh Devagan — Zee News; Vanisha — Startuppedia; Rupesh — Better India / niti.gov.in; Sri Chandana
+— The Hans India; Pal & Rahul — nif.org.in. Global: HuffPost/USNews (Wu), Rep. Don Davis office (Fu),
+societyforscience.org (Lee), The Star/Inquirer (Vallabhaneni), KCUR (Greene).
 
 ---
 
 ## PART D — FIRST 90 DAYS (concrete)
-- **Weeks 1–2:** finalise the roster; pick 5–8 warm anchors (Surya, Vanisha, Rupesh, Sri Chandana +).
-  Draft the safeguarding + media-consent one-pager and the fiscal-sponsor route for minors.
+- **Weeks 1–2:** finalise the roster; **recover NextMile 2025 finalist names from internal records**;
+  pick 5–8 warm anchors (NextMile teams + Surya, Rohit Raj, Vanisha, Sri Chandana). Draft the
+  safeguarding + media-consent one-pager and the fiscal-sponsor route for minors.
 - **Weeks 3–4:** personal outreach (Part E); open the **Young Builders community**; first mentor intros.
 - **Month 2:** publish micro-grant criteria (adoption-pathway required); confirm 3–4 consortium mentors;
   secure 1–2 concrete "doors" (a DRSC / traffic-police / OEM contact willing to review a youth project).
@@ -174,5 +234,7 @@ engagement contract-free.)*
 
 ---
 
-_Status: engagement model complete; roster (Part C) expanding via live research this session.
-Committed & pushed per the "save work as you go" instruction._
+_Status: complete — engagement model + consolidated roster (5 research streams). Roster's verifiable
+named pool (~20 India + global) is documented as genuinely finite, which is itself a finding: it
+fits a curated CFI track, not a mass platform. Committed & pushed per the "save work as you go"
+instruction._
