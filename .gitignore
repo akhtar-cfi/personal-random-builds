@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node dependencies — Lucide icons are installed at build time (npm install lucide-static)
+deck/node_modules/
+deck/package.json
+deck/package-lock.json
+
+# Generated build caches
+deck/icon_cache/
+deck/crop_cache/
+
+# Logo copies auto-created by the build scripts (source of truth: deck/assets/)
+deck/logo_blue.png
+deck/logo_white.png
+
+# Per-slide QA render proofs — the tracked deliverables are the .pptx + .pdf
+deck/*_p[0-9][0-9].png
